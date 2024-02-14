@@ -1,15 +1,18 @@
 // En este archivo definirás tus rutas e importarás los componentes que vas a renderizar.
+import { Home, Cards, MoreInforCards, GroupChat, IndividualChat } from '.views/Home.js';
 
-/*
-import Example from './views/Example.js';
-
-Ejemplo de definición de rutas:
+/*Ejemplo de definición de rutas:*/
 
 const routes = {
-    "/": Example,
-    ...
+    "/": Home,
+    "/Cards": Cards,
+    "/MoreInforCards": MoreInforCards,
+    "/Api": Api,
+    "/GroupChat": GroupChat,
+    "/IndividualChat": IndividualChat,
+    "/Error": Error  
 }
-*/
+
 
 /*
 TODO:
@@ -17,3 +20,6 @@ TODO:
 2.- Pasar "root element" a router.
 3.- Invocar el router para renderizar la vista correcta.
 */
+
+const root = document.querySelector('#root');
+root.appendChild(Home());
