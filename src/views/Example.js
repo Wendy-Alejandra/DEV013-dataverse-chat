@@ -1,4 +1,5 @@
 const Example = () => {
+    return document.createElement('p').textContent("HOLA MUNDO");
 
 };
 
