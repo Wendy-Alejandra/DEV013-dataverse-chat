@@ -1,6 +1,7 @@
-const Example = () => {
-    return document.createElement('p').textContent("HOLA MUNDO");
+export const Example = () => {
+    const p = document.createElement('p');
+    p.textContent= "HOLA MUNDO";
+    return p;
 
 };
 
-export default Example;

@@ -13,8 +13,13 @@ export const setRootElement = (newRootElementValue) => {
     // optional Throw errors if routes isn't an object
     // optional Throw errors if routes doesn't define an /error route
     // assign ROUTES
-    ROUTES = newRoutesValue;
+    if(typeof newRoutesValue === 'object'){
+      if(newRoutesValue['/error']){
+        ROUTES = newRoutesValue;
+      }      
+    }     
   }
+
   const renderView = (pathname, props={}) => {
     // clear the root element
     const root = rootElement;
@@ -43,4 +48,5 @@ export const setRootElement = (newRootElementValue) => {
     // parse the location for the pathname and search params
     // convert the search params to an object
     // render the view with the pathname and object
+    renderView(location.pathname);
   }
