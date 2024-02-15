@@ -1,3 +1,4 @@
+import { navigateTo } from "../router.js";
 import { Footer } from "./../components/Footer.js";
 
 export const Home = () => {
@@ -15,5 +16,11 @@ export const Home = () => {
     `;
   div.setAttribute("class", "contenedor-home");
   section.append(div, Footer());
+
+  const buttonGo = section.querySelector(".go");
+  console.log(buttonGo);
+  buttonGo.addEventListener('click', () => navigateTo ("/cards", {}));
+
+
   return section;
 };

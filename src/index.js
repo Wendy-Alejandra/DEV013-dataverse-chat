@@ -7,7 +7,7 @@ import { setRootEl, setRoutes, onURLChange } from './router.js';
 /*Ejemplo de definición de rutas:*/
 const routes = {
     "/": Home,
-    "/Cards": Cards,
+    "/cards": Cards,
     // "/MoreInforCards": MoreInforCards,
     // "/API": Api,
     // "/GroupChat": GroupChat,
@@ -25,7 +25,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
     onURLChange(event.currentTarget.location);
 })
 
-
+window.addEventListener('popstate', (e)=>{
+    console.log(e.currentTarget.location);
+    onURLChange(e.currentTarget.location);
+})
 /*
 TODO:
 1.- Definir rutas en router.
