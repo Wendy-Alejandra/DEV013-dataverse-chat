@@ -18,7 +18,6 @@ export const Home = () => {
   section.append(div, Footer());
 
   const buttonGo = section.querySelector(".go");
-  console.log(buttonGo);
   buttonGo.addEventListener('click', () => navigateTo ("/cards", {}));
 
 
