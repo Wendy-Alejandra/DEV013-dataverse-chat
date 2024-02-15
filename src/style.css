@@ -9,6 +9,7 @@
 }
 :root{
     --blanco: #ffffff;
+    --blanco-opaco: rgba(255, 255, 255, 0.7);
     --gris-claro: #D6D9DC;
     --gris-oscuro: #A4A6A9;
     --azul: #3fa2cc;
@@ -16,12 +17,60 @@
     --naranja: #D9AB37;
     --amarillo: #e2dd82;
     --fuente: 'Inter', sans-serif;
+    --style: italic;
 }
 
 body{
     background: url(fondo_cruceros.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
 }
+ /* Style home*/
+ .contenedor-home{
+    background-color: var(--blanco-opaco);
+    margin: 3.75rem;
+    border-radius: 1rem;
+    padding: 1rem;
+ }
+ .title-home{
+    color: var(--negro);
+    font-size: 3rem;
+    font-style: var(--style);
+    font-weight: bolder;
+    text-align: center;
+    padding-top: 2rem ;    
+ }
+ .home-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ .img-home{
+    margin: 2rem 3rem;
+    width: 320px;
+    height: 320px;
+    border-radius: 0.5rem;
+    cursor: pointer;
+ }
+ .text-button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+ .text-home{
+    font-size: 2rem;
+    text-align: center;
+    font-style: var(--style);
+    font-weight: 400;
+    color: var(--negro);
+
+ }
+ .go{
+    font-size: 1.5rem;   
+ }
+
+ /* Codigo dataverse proyecto 2*/
+    
 .container-section{
     background-color: var(--azul);
     border-radius: 1rem;
