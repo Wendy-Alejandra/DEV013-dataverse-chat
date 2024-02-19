@@ -9,7 +9,7 @@ export const Home = () => {
         <section class="home-section">
             <img class="img-home" src='https://github.com/Wendy-Alejandra/DEV013-dataverse/blob/main/src/data/images/symphonyOfTheSeasCaribe.jpeg?raw=true'/>
             <div class="text-button">
-                <p class="text-home">Please press the GO button and enjoy the Trip</p>
+                <p class="text-home">Please press the GO button and enjoy the trip</p>
                 <button class="go">GO</button>
             </div>
         </section>

@@ -9,7 +9,7 @@
 }
 :root{
     --blanco: #ffffff;
-    --blanco-opaco: rgba(255, 255, 255, 0.7);
+    --blanco-opaco: rgba(255, 255, 255, 0.8);
     --gris-claro: #D6D9DC;
     --gris-oscuro: #A4A6A9;
     --azul: #3fa2cc;
@@ -56,6 +56,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
  }
  .text-home{
     font-size: 2rem;
@@ -63,11 +64,19 @@ body{
     font-style: var(--style);
     font-weight: 400;
     color: var(--negro);
-
  }
  .go{
-    font-size: 1.5rem;   
+    font-size: 1.5rem; 
+    margin: 1.5rem;
+    padding: 0.6rem 2.5rem;
+    border: 1px solid var(--gris-oscuro);
+    background-color: var(--naranja);
+    border-radius: 1.2rem;
+    font-size: 2rem;
+    font-weight: 600;
+    cursor: pointer;  
  }
+
 
  /* Codigo dataverse proyecto 2*/
     
