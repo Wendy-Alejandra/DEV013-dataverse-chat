@@ -1,8 +1,13 @@
+import { Menu } from "./../components/Menu.js";
 import { Footer } from "./../components/Footer.js";
 
 export const Cards = () => {
-  const cards = document.createElement("h1");
+  const cards = document.createElement("section");
+  const div = document.createElement("div");
   cards.textContent = "Cards prueba";
+  div.append(Menu(), cards, Footer())
+  return div;
+ 
 
     // const section = document.createElement("section");
     // section.className = "container-section"
@@ -56,7 +61,7 @@ export const Cards = () => {
     //     </main>`;
     
     // const cards = `${section.append(div, main)} ${ Footer()}`;
-    return cards;
+
 };
 
 // export default Home;
