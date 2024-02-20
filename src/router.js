@@ -1,4 +1,4 @@
-// Contiene todas las rutas
+// Variable privada que almacena todas las rutas de la SPA
 let ROUTES = {
 
 };
