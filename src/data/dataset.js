@@ -1,4 +1,4 @@
-const data = [
+export const data = [
     {
       id: '1',
       name: 'Symphony of the Seas',
@@ -385,4 +385,4 @@ const data = [
     },
           
   ];
-  export default data;
+  
