@@ -15,14 +15,24 @@ export const Cards = () => {
     <dd itemprop="departureBoatTerminal"> Port: ${card.facts.departurePort}</dd>
     <dd itemprop="totalPrice">${card.facts.cruisePrice}</dd>
     <dd itemprop="description">AVG PER PERSON</dd>
-    <button class="see-more">See more</button>
+    <button class="see-more" data-id="${card.id}">See more</button>
 </li>`
   });
   ul.innerHTML = html;
   div.append(Header(), Menu(), ul, Footer());
 
-  const buttonSeeMore = ul.querySelector(".see-more");
-  buttonSeeMore.addEventListener('click', () => navigateTo ("/moreInfoCards", {}));
+  const botones = ul.querySelectorAll(".see-more");
+  console.log(botones);
+  botones.forEach((boton) => {
+    boton.addEventListener("click", () => {
+      const cardId = boton.getAttribute("data-id");
+      console.log(cardId);
+      navigateTo("/moreInfoCards", cardId);
+      console.log(navigateTo)
+    });
+  });
+  
+  
 
   return div;
 
