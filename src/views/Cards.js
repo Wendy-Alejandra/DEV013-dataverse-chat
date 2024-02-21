@@ -3,6 +3,7 @@ import { Header } from "./../components/Header.js";
 import { Menu } from "./../components/Menu.js";
 import { Footer } from "./../components/Footer.js";
 import { navigateTo } from "../router.js";
+import { filterData } from "./../lib/dataFunctions.js";
 
 export const Cards = () => {
   const div = document.createElement("div");
@@ -18,8 +19,19 @@ export const Cards = () => {
     <button class="see-more" data-id="${card.id}">See more</button>
 </li>`
   });
+  
   ul.innerHTML = html;
   div.append(Header(), Menu(), ul, Footer());
+
+
+  const selectFilter = div.querySelector('select[data-testid="select-filter"]');
+  console.log(selectFilter);
+  selectFilter.addEventListener("change", (e)=>{
+    const filteredData= filterData(data, "cruisePrice", e.target.value);
+    ul.textContent="";
+    ul.append(filteredData);
+    console.log(ul);
+  });
 
   const botones = ul.querySelectorAll(".see-more");
   console.log(botones);
@@ -32,11 +44,7 @@ export const Cards = () => {
     });
   });
   
-  
-
   return div;
 
-
- 
 };
 
