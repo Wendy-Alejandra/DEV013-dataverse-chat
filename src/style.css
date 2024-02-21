@@ -77,6 +77,10 @@ body{
     cursor: pointer;  
  }
 
+ /* IndividualChat style*/
+.chat-background{
+    background-color: var(--gris-claro);
+}
 
  /* Codigo dataverse proyecto 2*/
     
