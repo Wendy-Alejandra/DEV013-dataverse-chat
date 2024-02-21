@@ -8,34 +8,35 @@ export const Cards = () => {
   const div = document.createElement("div");
   const ul= document.createElement("ul");
   let html = "";
-  data.forEach((card, index) => {
-    const cardId = `card-${index}`;
-    console.log(cardId);
-    const i = `${index}`
-    console.log(i);
-    html += `<li id="${cardId}" itemscope="" itemtype="name" class="cards">
+  data.forEach(card => {
+    html += `<li itemscope="" itemtype="name" class="cards">
     <img itemprop="image" src="${card.imageUrl}" alt="${card.name}">
     <dl itemprop="name">${card.name}</dl>
     <dd itemprop="departureBoatTerminal"> Port: ${card.facts.departurePort}</dd>
     <dd itemprop="totalPrice">${card.facts.cruisePrice}</dd>
     <dd itemprop="description">AVG PER PERSON</dd>
-    <button class="see-more" data-card-id="${cardId}">See more</button>
+    <button class="see-more" data-id="${card.id}">See more</button>
 </li>`
-
   });
   ul.innerHTML = html;
   div.append(Header(), Menu(), ul, Footer());
-  console.log(typeof ul);
-  const buttonsSeeMore = ul.querySelectorAll(".see-more");
-  console.log(buttonsSeeMore);
-  buttonsSeeMore.forEach(button => {
-    button.addEventListener('click', (event) => {
-    const cardId = event.target.getAttribute("data-card-id");
-    console.log(cardId);
-    navigateTo (`/moreInfoCards`, cardId);
+
+  const botones = ul.querySelectorAll(".see-more");
+  console.log(botones);
+  botones.forEach((boton) => {
+    boton.addEventListener("click", () => {
+      const cardId = boton.getAttribute("data-id");
+      console.log(cardId);
+      navigateTo("/moreInfoCards", cardId);
+      console.log(navigateTo)
     });
   });
- 
+  
+  
+
   return div;
+
+
+ 
 };
 

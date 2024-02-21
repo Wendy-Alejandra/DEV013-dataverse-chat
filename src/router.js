@@ -30,7 +30,7 @@ const renderView = (pathname, props={}) => {
     // find the correct view in ROUTES for the pathname
     console.log(pathname, ROUTES);
     if (ROUTES[pathname]) {
-        const template = ROUTES[pathname]();
+        const template = ROUTES[pathname](props);
         root.appendChild(template);
     // in case not found render the error view
     } else {
@@ -54,5 +54,5 @@ const renderView = (pathname, props={}) => {
     // parse the location for the pathname and search params
     // convert the search params to an object
     // render the view with the pathname and object
-    renderView(location.pathname)
+    renderView(location.pathname);
   }

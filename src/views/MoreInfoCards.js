@@ -1,14 +1,15 @@
-
-import { data } from "./../data/dataset.js";
-import { Header } from "../components/Header.js";
-import { Footer } from "../components/Footer.js";
+import { Header } from "./../components/Header.js";
+import { data } from "./../data/dataset.js"
+import { Footer } from "./../components/Footer.js";
 
 export const MoreInfoCards = (cardId) => {
-    const section = document.createElement("section");
+    console.log('cardIq que es', cardId)
+    const container = document.createElement("section");
+    const cruise = data.find( elemento => elemento.id === cardId)
+    console.log("esto es", cruise);
     const div = document.createElement("div");
-    const cruise = data.find(x => x.id === cardId);
-    div.innerHTML = `        
-    <h3>${cruise.name}</h3>
+    div.innerHTML= `
+    <h2>${cruise.name}</h2>
     <p>${cruise.shortDescription}</p>
     <div>
         <img itemprop="image" src="${cruise.imageUrl}" alt="${cruise.name}">
@@ -22,9 +23,11 @@ export const MoreInfoCards = (cardId) => {
     </div>
     <div>
         <p>If you want more information, chat with me! <i class="bi bi-chat-text"></i></p>
-    </div> `
+    </div> 
+    `;
+    container.append(Header(), div, Footer());
 
-    section.append(Header(), div, Footer());
 
-    return div;
+    return container;
+
 };
