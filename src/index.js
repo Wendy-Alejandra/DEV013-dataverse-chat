@@ -2,6 +2,7 @@
 import { Home } from "./views/Home.js";
 import { Cards } from "./views/Cards.js";
 import { MoreInfoCards } from "./views/MoreInfoCards.js";
+import { ApiKeyContent } from "./views/ApiKeyContent.js";
 import { IndividualChat } from "./views/IndividualChat.js";
 import { Error } from "./views/Error.js";
 import { setRootEl, setRoutes, onURLChange } from './router.js';
@@ -11,7 +12,7 @@ const routes = {
     "/": Home,
     "/cards": Cards,
     "/moreInfoCards": MoreInfoCards,
-    // "/API": Api,
+    "/ApiKey": ApiKeyContent,
     // "/groupChat": GroupChat,
     "/individualChat": IndividualChat,
     "/error": Error,  

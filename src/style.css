@@ -25,6 +25,13 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
 }
+/* Estilos para los contenedores blanco y azul*/
+.blue-container {
+    background-color: var(--azul);
+}
+.white-container {
+    background: var(--blanco);
+}
  /* Style home*/
  .contenedor-home{
     background-color: var(--blanco-opaco);
