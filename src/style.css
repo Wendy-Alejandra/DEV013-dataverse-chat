@@ -16,6 +16,7 @@
     --negro: #333333;
     --naranja: #D9AB37;
     --amarillo: #e2dd82;
+    --rojo: #F61836;
     --fuente: 'Inter', sans-serif;
     --style: italic;
 }
@@ -25,7 +26,8 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
 }
-/* Estilos para los contenedores blanco y azul*/
+/* Blue and white containers styles 
+(Estilos para los contenedores blanco y azul)*/
 .background-blue {
     background-color: var(--azul);
     margin: 3rem 3rem 1.5rem 3rem;
@@ -72,7 +74,7 @@ body{
     font-weight: 400;
     color: var(--negro);
  }
- .button-go{
+ .go, .save {
     font-size: 1.5rem; 
     margin: 1.5rem;
     padding: 0.6rem 2.5rem;
@@ -83,11 +85,41 @@ body{
     font-weight: 600;
     cursor: pointer;  
  }
-/* MoreInfoCards style*/
-strong{
-    font-weight: 600;
+ /*API Key style*/
+ .api-title {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    padding-bottom: 5rem;
 }
+.title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-style: italic;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 3rem; 
+}
+.close {
+    justify-self: end;
+    margin: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.section-1 {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+.section-2 { /*If API Key doesn't work this block will pop up*/
+    color: var(--rojo);
+}
+.section-3 {
+    display: grid;
+    justify-content: center;
 
+}
 
  /* IndividualChat style*/
 .chat-background{
