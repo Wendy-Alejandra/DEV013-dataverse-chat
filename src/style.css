@@ -26,11 +26,16 @@ body{
     background-repeat: no-repeat;
 }
 /* Estilos para los contenedores blanco y azul*/
-.blue-container {
+.background-blue {
     background-color: var(--azul);
+    margin: 3rem;
+    padding: 0.5rem 0;
+    border-radius: 1rem;
 }
-.white-container {
+.background-white {
     background: var(--blanco);
+    margin: 4rem;
+    border-radius: 1rem;
 }
  /* Style home*/
  .contenedor-home{

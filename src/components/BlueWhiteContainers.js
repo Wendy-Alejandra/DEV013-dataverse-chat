@@ -1,12 +1,10 @@
-export const BlueWhiteContainers = () => {
-    const blueDiv = document.createElement("div");
+export const BlueWhiteContainers = (element1) => {
+    const blueDiv = document.createElement("section");
     blueDiv.className = "blue-container";
-    const header = document.createElement("header");
-    header.innerHTML = `<h1>CRUISES LINES</h1>`;
-    const whiteDiv = document.createElement("div")
-    whiteDiv. className = "white-container";
-    whiteDiv.innerHTML = `<button class="close"><i class="bi bi-x-lg"></i></button>`;
-    blueDiv.append(header, whiteDiv);
+    //const whiteDiv = document.createElement("div")
+   // whiteDiv. className = "white-container";
+    //whiteDiv.innerHTML = `<button class="close"><i class="bi bi-x-lg"></i></button>`;
+    blueDiv.append(element1);
     return blueDiv;
 }
 
