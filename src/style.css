@@ -28,7 +28,7 @@ body{
 /* Estilos para los contenedores blanco y azul*/
 .background-blue {
     background-color: var(--azul);
-    margin: 3rem;
+    margin: 3rem 3rem 1.5rem 3rem;
     padding: 0.5rem 0;
     border-radius: 1rem;
 }
@@ -38,12 +38,6 @@ body{
     border-radius: 1rem;
 }
  /* Style home*/
- .contenedor-home{
-    background-color: var(--blanco-opaco);
-    margin: 3.75rem;
-    border-radius: 1rem;
-    padding: 1rem;
- }
  .title-home{
     color: var(--negro);
     font-size: 3rem;
@@ -52,23 +46,24 @@ body{
     text-align: center;
     padding-top: 2rem ;    
  }
- .home-section{
+ .main-home{
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 1rem;
  }
- .img-home{
-    margin: 2rem 3rem;
+ .img-home{ 
     width: 320px;
     height: 320px;
     border-radius: 0.5rem;
     cursor: pointer;
  }
- .text-button{
+ .article-home{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 1rem;
  }
  .text-home{
     font-size: 2rem;
@@ -77,7 +72,7 @@ body{
     font-weight: 400;
     color: var(--negro);
  }
- .go{
+ .button-go{
     font-size: 1.5rem; 
     margin: 1.5rem;
     padding: 0.6rem 2.5rem;
@@ -88,6 +83,11 @@ body{
     font-weight: 600;
     cursor: pointer;  
  }
+/* MoreInfoCards style*/
+strong{
+    font-weight: 600;
+}
+
 
  /* IndividualChat style*/
 .chat-background{
@@ -240,8 +240,9 @@ dd[itemprop="departureBoatTerminal"]{
 footer{
     text-align: center;
     color: var(--blanco);
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-style: italic;
+    font-weight: 500;
     margin: 0.3rem;
     padding-bottom: 0.2rem;
 }

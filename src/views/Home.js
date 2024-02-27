@@ -11,13 +11,13 @@ export const Home = () => {
     <header class="header-home">       
       <h1 class="title-home">WELCOME TO CRUISE LINES</h1>
     </header>
-    <main>
+    <main class="main-home">
       <figure> 
         <img class="img-home" src='https://github.com/Wendy-Alejandra/DEV013-dataverse/blob/main/src/data/images/symphonyOfTheSeasCaribe.jpeg?raw=true'/>
       </figure>
-      <article>
+      <article class="article-home">
         <p class="text-home">Please press the GO button and enjoy the trip</p>
-        <button class="go">GO</button>
+        <button class="button-go">GO</button>
       <article>
     </main>
     `;
@@ -26,7 +26,7 @@ export const Home = () => {
   container.append(blueContainer, Footer());
 
 
-  const buttonGo = whiteContainer.querySelector(".go");
+  const buttonGo = whiteContainer.querySelector(".button-go");
   buttonGo.addEventListener('click', () => navigateTo ("/cards", {}));
 
 
