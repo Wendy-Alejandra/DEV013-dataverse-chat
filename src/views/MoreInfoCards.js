@@ -38,10 +38,10 @@ export const MoreInfoCards = (cardId) => {
     container.append(blueContainer, Footer());
 
     const close = whiteContainer.querySelector(".close");
-    close.addEventListener('click', () => navigateTo ("/cards", {}));
+    close.addEventListener('click', () => navigateTo ("/cards", cardId));
 
     const individualChat = whiteContainer.querySelector(".bi-chat-text");
-    individualChat.addEventListener('click', () => navigateTo ("/ApiKey", {}));
+    individualChat.addEventListener('click', () => navigateTo ("/ApiKey", cardId));
 
     return container;
 };

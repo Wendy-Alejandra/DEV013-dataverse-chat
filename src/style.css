@@ -18,6 +18,7 @@
   --naranja: #d9ab37;
   --amarillo: #e2dd82;
   --rojo: #f61836;
+  --verde: #7fff00;
   --fuente: "Inter", sans-serif;
   --style: italic;
 }
@@ -220,8 +221,48 @@ input::placeholder {
 }
 
 /* IndividualChat style*/
+.title-chat{
+    display: grid;
+  grid-template-columns: 9% 86% 5%;
+  justify-items: start;
+  align-items: center;
+}
+
+.imag-chat{
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+    margin: 0.5rem;
+}
+
+
+.header-chat{
+    text-align: left;
+}
+.bi-circle-fill{
+    color: var(--verde);
+    font-size: 0.7rem;
+    margin-right: 0.2rem;
+
+}
 .chat-background {
   background-color: var(--gris-claro);
+    margin: auto;
+    border-radius: 0 0 1rem 1rem;
+    height: 37.5rem;
+    box-shadow: 0 0 1.25rem 0.5rem #c3c3c333;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  
+}
+.chat{
+    padding: 0;
+}
+.message-bar{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
 /* Codigo dataverse proyecto 2*/

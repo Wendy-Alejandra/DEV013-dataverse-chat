@@ -2,7 +2,7 @@ import { Header } from "../components/Header.js";
 import { Footer } from "../components/Footer.js";
 import { navigateTo } from "./../router.js";
 
-export const ApiKey = () => {
+export const ApiKey = (cardId) => {
     const container = document.createElement("div");
     const blueContainer = document.createElement("div");
     blueContainer.className = 'background-blue';
@@ -33,10 +33,10 @@ export const ApiKey = () => {
     container.append(blueContainer, Footer());
 
     const close = whiteContainer.querySelector(".close");
-    close.addEventListener('click', () => navigateTo ("/moreInfoCards", {}));
+    close.addEventListener('click', () => navigateTo ("/moreInfoCards", cardId));
 
     const save = whiteContainer.querySelector(".save");
-    save.addEventListener('click', () => navigateTo ("/individualChat", {}));
+    save.addEventListener('click', () => navigateTo ("/individualChat", cardId));
 
     return container;
 }
