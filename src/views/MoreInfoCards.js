@@ -41,7 +41,7 @@ export const MoreInfoCards = (cardId) => {
     close.addEventListener('click', () => navigateTo ("/cards", {}));
 
     const individualChat = whiteContainer.querySelector(".bi-chat-text");
-    individualChat.addEventListener('click', () => navigateTo ("/individualChat", {}));
+    individualChat.addEventListener('click', () => navigateTo ("/ApiKey", {}));
 
     return container;
 };
