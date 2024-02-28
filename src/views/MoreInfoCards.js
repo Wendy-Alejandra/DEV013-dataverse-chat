@@ -1,6 +1,7 @@
 import { Header } from "./../components/Header.js";
 import { data } from "./../data/dataset.js"
 import { Footer } from "./../components/Footer.js";
+import { navigateTo } from "./../router.js";
 
 export const MoreInfoCards = (cardId) => {
     const container = document.createElement("div");
@@ -10,32 +11,37 @@ export const MoreInfoCards = (cardId) => {
     const whiteContainer = document.createElement("main");
     whiteContainer.className = 'background-white';
     whiteContainer.innerHTML= `
-    <header>
+    <header class="infor-title">
         <h2>${cruise.name}</h2>
+        <button class="close"><i class="bi bi-x-lg"></i></button>
     </header>
-    <p>${cruise.shortDescription}</p>
+    <p class="short-description">${cruise.shortDescription}</p>
     <article class="article-infor">
         <figure>
             <img itemprop="image" src="${cruise.imageUrl}" alt="${cruise.name}">
         </figure>
-        <section>
-            <p> <strong> Departure Port:</strong>  ${cruise.facts.departurePort}</p>
-            <p>${cruise.facts.cruisePrice}</p>
-            <p>AVG PER PERSON</p>
-            <section>
-                <p><strong>Cruise Date: </strong>${cruise.facts.cruiseDate}</p>
-                <p><strong>Duration:</strong> ${cruise.facts.durationInDays}</p>
+        <section class="section-price">
+            <p class="p-infor"> <strong> Departure Port:</strong>  ${cruise.facts.departurePort}</p>
+            <p class="infor-price p-infor">$${cruise.facts.cruisePrice}</p>
+            <p class="p-infor">AVG PER PERSON</p>
+            <section class="section-infor">
+                <p class="p2-infor"><strong>Cruise Date: </strong>${cruise.facts.cruiseDate}</p>
+                <p class="p2-infor"><strong>Duration:</strong> ${cruise.facts.durationInDays} nights</p>
             </section>
         </section> 
     </article>    
     <section class="boton-infor">
-        <p>If you want more information, chat with me! <i class="bi bi-chat-text"></i></p>
+        <p class="p-boton">If you want more information, chat with me! &ensp;<i class="bi bi-chat-text"></i></p>
     </section> 
     `;
     blueContainer.append(Header(),whiteContainer);
     container.append(blueContainer, Footer());
 
+    const close = whiteContainer.querySelector(".close");
+    close.addEventListener('click', () => navigateTo ("/cards", {}));
+
+    const individualChat = whiteContainer.querySelector(".bi-chat-text");
+    individualChat.addEventListener('click', () => navigateTo ("/individualChat", {}));
 
     return container;
-
 };

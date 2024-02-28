@@ -13,6 +13,7 @@
     --gris-claro: #D6D9DC;
     --gris-oscuro: #A4A6A9;
     --azul: #3fa2cc;
+    --azul-oscuro: #267D95;
     --negro: #333333;
     --naranja: #D9AB37;
     --amarillo: #e2dd82;
@@ -31,13 +32,24 @@ body{
 .background-blue {
     background-color: var(--azul);
     margin: 3rem 3rem 1.5rem 3rem;
-    padding: 0.5rem 0;
+    padding: 2rem;
     border-radius: 1rem;
 }
 .background-white {
     background: var(--blanco);
-    margin: 4rem;
+    /*margin: 2rem 2rem 2rem 2rem;*/
+    margin: 1.5rem 0 1rem 0;
+    padding: 1rem;
     border-radius: 1rem;
+}
+/*Styles headers*/
+h1{
+    color: var(--blanco);
+    font-size: 3rem;
+}
+h2 {
+    font-size: 2rem;
+    font-style: italic;
 }
  /* Style home*/
  .title-home{
@@ -74,7 +86,7 @@ body{
     font-weight: 400;
     color: var(--negro);
  }
- .go, .save {
+ .button-go, .save{
     font-size: 1.5rem; 
     margin: 1.5rem;
     padding: 0.6rem 2.5rem;
@@ -85,6 +97,66 @@ body{
     font-weight: 600;
     cursor: pointer;  
  }
+
+ /* MoreInforCards*/
+ .short-description{
+    font-size: 1.3rem;
+    font-style: italic;
+    text-align: center; 
+    padding: 1rem 0 1.5rem 0;
+ }
+.infor-title{
+    display: grid;
+    grid-template-columns: 95% 5%;
+    justify-content: center;
+    align-items: center;
+}
+.article-infor{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+
+.section-price{
+    text-align: center;
+}
+.p-infor{
+    margin: 1rem;
+    font-size: 1.8rem;
+}
+.p2-infor{
+    display:grid;
+    grid-template-rows: repeat(2, 1fr);
+    margin: 1rem;
+    font-size: 1.8rem;
+}
+.infor-price{
+    font-size: 3rem;
+    font-weight: 600;
+    background-color: var(--naranja);
+    margin: 0 4rem 0 4rem;
+    border-radius: 1.5rem;
+}
+.section-infor{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+}
+.p-boton{
+    background-color: var(--azul-oscuro);
+    border-radius: 1rem;
+    color: var(--blanco);
+    text-align: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-style: italic;
+    margin: 1.5rem 6rem 1rem 6rem;
+    padding: 0.5rem 0 0.7rem 0;
+}
+.bi-chat-text{
+    font-size: 2rem;
+}
  /*API Key style*/
  .api-title {
     display: grid;
@@ -139,14 +211,7 @@ body{
 header{
     text-align: center;
 }
-h1{
-    color: var(--blanco);
-    font-size: 2rem;
-}
-h2 {
-    margin: 0.8rem;
-    font-style: italic;
-}
+
 #menu{
     margin-left: 4rem;
     margin-right: 4rem;
