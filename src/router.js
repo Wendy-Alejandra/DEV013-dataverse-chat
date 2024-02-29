@@ -23,6 +23,15 @@ export const setRoutes = (newRoutesValue) => {
     ROUTES = newRoutesValue;
 }
 
+const queryStringToObject = (queryString) => {
+  // convert query string to URLSearchParams
+  const params = new URLSearchParams(queryString);
+  // convert URLSearchParams to an object
+  const paramsObject = Object.fromEntries(params);
+  // return the object
+  return paramsObject;
+}
+
 const renderView = (pathname, props={}) => {
     // clear the root element
     const root = rootEl;
@@ -52,7 +61,9 @@ const renderView = (pathname, props={}) => {
 
   export const onURLChange = (location) => {
     // parse the location for the pathname and search params
+    const searchParam = window.location.search;
     // convert the search params to an object
+    const props = queryStringToObject(searchParam);
     // render the view with the pathname and object
-    renderView(location.pathname);
+    renderView(location.pathname, props);
   }
