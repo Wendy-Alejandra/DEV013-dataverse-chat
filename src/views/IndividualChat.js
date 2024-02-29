@@ -3,7 +3,7 @@ import { data } from "./../data/dataset.js";
 import { Header } from "../components/Header.js";
 import { Footer } from "../components/Footer.js";
 
-export const IndividualChat = (cardId) => {
+export const IndividualChat = ({id: cardId}) => {
     const container = document.createElement("div");
     const blueContainer = document.createElement("div");
     blueContainer.className= 'background-blue';

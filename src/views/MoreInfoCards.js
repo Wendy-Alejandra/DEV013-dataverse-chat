@@ -3,7 +3,7 @@ import { data } from "./../data/dataset.js"
 import { Footer } from "./../components/Footer.js";
 import { navigateTo } from "./../router.js";
 
-export const MoreInfoCards = (cardId) => {
+export const MoreInfoCards = ({id:cardId}) => {
     const container = document.createElement("div");
     const blueContainer = document.createElement("div");
     blueContainer.className = 'background-blue';
@@ -38,10 +38,12 @@ export const MoreInfoCards = (cardId) => {
     container.append(blueContainer, Footer());
 
     const close = whiteContainer.querySelector(".close");
-    close.addEventListener('click', () => navigateTo ("/cards", cardId));
+    close.addEventListener('click', () => navigateTo ("/cards"));
 
     const individualChat = whiteContainer.querySelector(".bi-chat-text");
-    individualChat.addEventListener('click', () => navigateTo ("/ApiKey", cardId));
+    individualChat.addEventListener('click', () => {
+        
+    });
 
     return container;
 };

@@ -33,10 +33,10 @@ export const ApiKey = (cardId) => {
     container.append(blueContainer, Footer());
 
     const close = whiteContainer.querySelector(".close");
-    close.addEventListener('click', () => navigateTo ("/moreInfoCards", cardId));
+    close.addEventListener('click', () => navigateTo ("/moreInfoCards", {id:cardId}));
 
     const save = whiteContainer.querySelector(".save");
-    save.addEventListener('click', () => navigateTo ("/individualChat", cardId));
+    save.addEventListener('click', () => navigateTo ("/individualChat", {id:cardId}));
 
     return container;
 }
