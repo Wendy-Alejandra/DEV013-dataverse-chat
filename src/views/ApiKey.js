@@ -1,8 +1,9 @@
 import { Header } from "../components/Header.js";
 import { Footer } from "../components/Footer.js";
 import { navigateTo } from "./../router.js";
+import { setApiKey, getApiKey } from "./../lib/apiStorage.js";
 
-export const ApiKey = (cardId) => {
+export const ApiKey = ({ id: cardId }) => {
   const container = document.createElement("div");
   const blueContainer = document.createElement("div");
   blueContainer.className = "background-blue";
@@ -17,7 +18,7 @@ export const ApiKey = (cardId) => {
         <button class="close"><i class="bi bi-x-lg"></i></button>
     </header>    
     <section class="section-1">
-            <input type="password" placeholder="Enter your API Key here!"></input>
+            <input type="text" class="api-key" placeholder="Enter your API Key here!"></input>
             <button class="save">Save</button>
     </section>
     <section class="section-2">
@@ -38,9 +39,12 @@ export const ApiKey = (cardId) => {
   });
 
   const save = whiteContainer.querySelector(".save");
+  let inputApi= whiteContainer.querySelector('.api-key').value;
   save.addEventListener("click", () => {
+    console.log(inputApi);
+    getApiKey(inputApi);
+    setApiKey(inputApi);
     navigateTo("/individualChat", { id: cardId });
   });
-
   return container;
 };
