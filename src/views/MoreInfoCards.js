@@ -42,7 +42,7 @@ export const MoreInfoCards = ({id:cardId}) => {
 
     const individualChat = whiteContainer.querySelector(".bi-chat-text");
     individualChat.addEventListener('click', () => {
-        
+        navigateTo("/individualChat", {id:cardId});
     });
 
     return container;

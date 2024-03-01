@@ -2,6 +2,7 @@ import { data } from "./../data/dataset.js";
 
 import { Header } from "../components/Header.js";
 import { Footer } from "../components/Footer.js";
+import { navigateTo } from "../router.js";
 
 export const IndividualChat = ({id: cardId}) => {
     const container = document.createElement("div");
@@ -31,5 +32,10 @@ export const IndividualChat = ({id: cardId}) => {
     `;
     blueContainer.append(Header(), whiteContainer);
     container.append(blueContainer, Footer());
+
+
+    const buttonClose = whiteContainer.querySelector(".close");
+    buttonClose.addEventListener("click", () => {navigateTo("/cards")});
+
     return container;
 }

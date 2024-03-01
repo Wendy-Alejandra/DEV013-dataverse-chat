@@ -55,7 +55,7 @@ const renderView = (pathname, props={}) => {
       props
       ? `?${new URLSearchParams(props)}`
       : ""}`;
-    console.log(URLvisited);
+    console.log("ver URLvisited",URLvisited);
 
     history.pushState({}, "", URLvisited);
     
