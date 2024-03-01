@@ -87,7 +87,7 @@ h2 {
   font-weight: 400;
   color: var(--negro);
 }
-.button-go{
+.button-go {
   margin: 1.5rem;
   padding: 0.6rem 2.5rem;
   border: 1px solid var(--gris-oscuro);
@@ -98,8 +98,8 @@ h2 {
   cursor: pointer;
 }
 button:hover {
-    background-color: var(--amarillo);
-  }
+  background-color: var(--amarillo);
+}
 
 /* MoreInforCards*/
 .short-description {
@@ -199,7 +199,7 @@ input::placeholder {
   font-size: 1.5rem;
 }
 .save {
-    display: inline-block;
+  display: inline-block;
   padding: 1rem 2.5rem;
   margin: 1rem;
   border: 1px solid var(--gris-oscuro);
@@ -221,48 +221,45 @@ input::placeholder {
 }
 
 /* IndividualChat style*/
-.title-chat{
-    display: grid;
+.title-chat {
+  display: grid;
   grid-template-columns: 9% 86% 5%;
   justify-items: start;
   align-items: center;
 }
 
-.imag-chat{
-    border-radius: 50%;
-    height: 4rem;
-    width: 4rem;
-    margin: 0.5rem;
+.imag-chat {
+  border-radius: 50%;
+  height: 4rem;
+  width: 4rem;
+  margin: 0.5rem;
 }
 
-
-.header-chat{
-    text-align: left;
+.header-chat {
+  text-align: left;
 }
-.bi-circle-fill{
-    color: var(--verde);
-    font-size: 0.7rem;
-    margin-right: 0.2rem;
-
+.bi-circle-fill {
+  color: var(--verde);
+  font-size: 0.7rem;
+  margin-right: 0.2rem;
 }
 .chat-background {
   background-color: var(--gris-claro);
-    margin: auto;
-    border-radius: 0 0 1rem 1rem;
-    height: 37.5rem;
-    box-shadow: 0 0 1.25rem 0.5rem #c3c3c333;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-  
+  margin: auto;
+  border-radius: 0 0 1rem 1rem;
+  height: 37.5rem;
+  box-shadow: 0 0 1.25rem 0.5rem #c3c3c333;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
-.chat{
-    padding: 0;
+.chat {
+  padding: 0;
 }
-.message-bar{
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+.message-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 /* Codigo dataverse proyecto 2*/

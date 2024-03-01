@@ -1,16 +1,16 @@
 import { Header } from "./../components/Header.js";
-import { data } from "./../data/dataset.js"
+import { data } from "./../data/dataset.js";
 import { Footer } from "./../components/Footer.js";
 import { navigateTo } from "./../router.js";
 
-export const MoreInfoCards = ({id:cardId}) => {
-    const container = document.createElement("div");
-    const blueContainer = document.createElement("div");
-    blueContainer.className = 'background-blue';
-    const cruise = data.find( elemento => elemento.id === cardId)
-    const whiteContainer = document.createElement("main");
-    whiteContainer.className = 'background-white';
-    whiteContainer.innerHTML= `
+export const MoreInfoCards = ({ id: cardId }) => {
+  const container = document.createElement("div");
+  const blueContainer = document.createElement("div");
+  blueContainer.className = "background-blue";
+  const cruise = data.find((elemento) => elemento.id === cardId);
+  const whiteContainer = document.createElement("main");
+  whiteContainer.className = "background-white";
+  whiteContainer.innerHTML = `
     <header class="infor-title">
         <h2>${cruise.name}</h2>
         <button class="close"><i class="bi bi-x-lg"></i></button>
@@ -34,16 +34,16 @@ export const MoreInfoCards = ({id:cardId}) => {
         <p class="p-boton">If you want more information, chat with me! &ensp;<i class="bi bi-chat-text"></i></p>
     </section> 
     `;
-    blueContainer.append(Header(),whiteContainer);
-    container.append(blueContainer, Footer());
+  blueContainer.append(Header(), whiteContainer);
+  container.append(blueContainer, Footer());
 
-    const close = whiteContainer.querySelector(".close");
-    close.addEventListener('click', () => navigateTo ("/cards"));
+  const close = whiteContainer.querySelector(".close");
+  close.addEventListener("click", () => navigateTo("/cards"));
 
-    const individualChat = whiteContainer.querySelector(".bi-chat-text");
-    individualChat.addEventListener('click', () => {
-        
-    });
+  const individualChat = whiteContainer.querySelector(".bi-chat-text");
+  individualChat.addEventListener("click", () => {
+    navigateTo("/individualChat", { id: cardId });
+  });
 
-    return container;
+  return container;
 };

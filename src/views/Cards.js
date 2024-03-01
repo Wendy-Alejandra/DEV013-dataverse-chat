@@ -2,9 +2,14 @@ import { data } from "./../data/dataset.js";
 import { Header } from "./../components/Header.js";
 import { Menu } from "./../components/Menu.js";
 import { Statistics } from "../components/Statistics.js";
-import { CardsRender } from "./../components/CardsRender.js"
+import { CardsRender } from "./../components/CardsRender.js";
 import { Footer } from "./../components/Footer.js";
-import { filterData, sortData, sortDataByPrice, computeStats } from "./../lib/dataFunctions.js";
+import {
+  filterData,
+  sortData,
+  sortDataByPrice,
+  computeStats,
+} from "./../lib/dataFunctions.js";
 
 export const Cards = () => {
   const section = document.createElement("section");
@@ -13,30 +18,37 @@ export const Cards = () => {
 
   section.append(Header(), Menu(), Statistics(), div, Footer());
 
- 
-  const selectFilter = section.querySelector('select[data-testid="select-filter"]');
+  const selectFilter = section.querySelector(
+    'select[data-testid="select-filter"]'
+  );
   const selectSort = section.querySelector('select[data-testid="select-sort"]');
-  const selectSortByPrice = section.querySelector('select[data-testid="select-sort-price"]');
+  const selectSortByPrice = section.querySelector(
+    'select[data-testid="select-sort-price"]'
+  );
   const button = section.querySelector('button[data-testid="button-clear"]');
   const buttonStats = section.querySelector('button[data-testid="statistics"]');
-  const textStats = section.querySelector('.text');
+  const textStats = section.querySelector(".text");
 
   /* Filtering and sorting filtered data (filtrando y ordenando la data filtrada) */
-  selectFilter.addEventListener("change", (e)=>{
-    const filteredData= filterData(data, "cruisePrice", e.target.value);
-    div.textContent="";
+  selectFilter.addEventListener("change", (e) => {
+    const filteredData = filterData(data, "cruisePrice", e.target.value);
+    div.textContent = "";
     div.append(CardsRender(filteredData));
     selectSort.addEventListener("change", function (e) {
       const orderFilterName = sortData(filteredData, "name", e.target.value);
       div.innerHTML = "";
       div.append(CardsRender(orderFilterName));
     });
-      selectSortByPrice.addEventListener("change", function (e) {
-        const orderPriceFilter = sortDataByPrice(filteredData, "cruisePrice", e.target.value);
-        div.innerHTML = "";
-        div.append(CardsRender(orderPriceFilter));
+    selectSortByPrice.addEventListener("change", function (e) {
+      const orderPriceFilter = sortDataByPrice(
+        filteredData,
+        "cruisePrice",
+        e.target.value
+      );
+      div.innerHTML = "";
+      div.append(CardsRender(orderPriceFilter));
     });
-    textStats.textContent= "";
+    textStats.textContent = "";
   });
 
   /* ordering by ship name only (ordenando solo por nombre de crucero)*/
@@ -48,7 +60,11 @@ export const Cards = () => {
 
   /* ordering by cruise price only (ordenando solo por precio de crucero)*/
   selectSortByPrice.addEventListener("change", function (e) {
-    const orderDataByPrice = sortDataByPrice(data, "cruisePrice", e.target.value);
+    const orderDataByPrice = sortDataByPrice(
+      data,
+      "cruisePrice",
+      e.target.value
+    );
     div.innerHTML = "";
     div.appendChild(CardsRender(orderDataByPrice));
   });
@@ -62,7 +78,11 @@ export const Cards = () => {
     div.innerHTML = "";
     div.append(CardsRender(data));
     selectSortByPrice.addEventListener("change", function (e) {
-      const orderDataByPrice = sortDataByPrice(data, "cruisePrice", e.target.value);
+      const orderDataByPrice = sortDataByPrice(
+        data,
+        "cruisePrice",
+        e.target.value
+      );
       div.innerHTML = "";
       div.append(CardsRender(orderDataByPrice));
     });
@@ -75,19 +95,17 @@ export const Cards = () => {
 
   /* updating statistics (average price) all cards and filtered cards (actualizando las estadisticas (promedio
   de precios) para todas las tarjetas)*/
-  buttonStats.addEventListener('click', function(){
-    if (selectFilter.value === 'Price') {
-      textStats.textContent= computeStats(data);
+  buttonStats.addEventListener("click", function () {
+    if (selectFilter.value === "Price") {
+      textStats.textContent = computeStats(data);
     } else {
       const filteredData = filterData(data, "cruisePrice", selectFilter.value);
-      textStats.textContent= computeStats(filteredData);
+      textStats.textContent = computeStats(filteredData);
     }
   });
 
   /* opening-closing hamburguer menu for screen devices <600px (abriendo-cerrando el menu hamburguesa para
   dispositivos con pantallas <600px)*/
 
-
   return section;
-  };
-
+};

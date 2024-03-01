@@ -4,9 +4,9 @@ import { Footer } from "./../components/Footer.js";
 export const Home = () => {
   const container = document.createElement("div");
   const blueContainer = document.createElement("div");
-  blueContainer.className = 'background-blue';
+  blueContainer.className = "background-blue";
   const whiteContainer = document.createElement("div");
-  whiteContainer.className = 'background-white';
+  whiteContainer.className = "background-white";
   whiteContainer.innerHTML = `   
     <header class="header-home">       
       <h1 class="title-home">WELCOME TO CRUISE LINES</h1>
@@ -21,14 +21,14 @@ export const Home = () => {
       <article>
     </main>
     `;
-  
+
   blueContainer.append(whiteContainer);
   container.append(blueContainer, Footer());
 
-
   const buttonGo = whiteContainer.querySelector(".button-go");
-  buttonGo.addEventListener('click', () => navigateTo ("/cards"));
-
+  buttonGo.addEventListener("click", () => {
+    navigateTo("/cards");
+  });
 
   return container;
 };

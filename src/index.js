@@ -5,33 +5,33 @@ import { MoreInfoCards } from "./views/MoreInfoCards.js";
 import { ApiKey } from "./views/ApiKey.js";
 import { IndividualChat } from "./views/IndividualChat.js";
 import { Error } from "./views/Error.js";
-import { setRootEl, setRoutes, onURLChange } from './router.js';
+import { setRootEl, setRoutes, onURLChange } from "./router.js";
 
 /*Ejemplo de definición de rutas:*/
 const routes = {
-    "/": Home,
-    "/cards": Cards,
-    "/moreInfoCards": MoreInfoCards,
-    "/ApiKey": ApiKey,
-    // "/groupChat": GroupChat,
-    "/individualChat": IndividualChat,
-    "/error": Error,  
-}
+  "/": Home,
+  "/cards": Cards,
+  "/moreInfoCards": MoreInfoCards,
+  "/ApiKey": ApiKey,
+  // "/groupChat": GroupChat,
+  "/individualChat": IndividualChat,
+  "/error": Error,
+};
 
-const viewContainer = document.getElementById("root")
+const viewContainer = document.getElementById("root");
 setRoutes(routes);
 setRootEl(viewContainer);
 
 document.addEventListener("DOMContentLoaded", (event) => {
-    console.log("DOM fully loaded and parsed");
-    console.log(event.currentTarget.location);
-    onURLChange(event.currentTarget.location);
-})
+  console.log("DOM fully loaded and parsed");
+  console.log(event.currentTarget.location);
+  onURLChange(event.currentTarget.location);
+});
 
-window.addEventListener('popstate', (e)=>{
-    console.log(e.currentTarget.location);
-    onURLChange(e.currentTarget.location);
-})
+window.addEventListener("popstate", (e) => {
+  console.log(e.currentTarget.location);
+  onURLChange(e.currentTarget.location);
+});
 /*
 TODO:
 1.- Definir rutas en router.

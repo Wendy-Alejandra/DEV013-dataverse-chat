@@ -25,6 +25,6 @@ export const Menu = () => {
     <button data-testid="button-clear">Clear</button>
     `;
 
-    nav.setAttribute("id", "menu");
+  nav.setAttribute("id", "menu");
   return nav;
 };
