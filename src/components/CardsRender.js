@@ -23,7 +23,7 @@ export const CardsRender = (data) => {
     buttons.forEach((button) => {
       button.addEventListener("click", () => {
         const cardId = button.getAttribute("data-id");
-        navigateTo("/moreInfoCards", cardId);
+        navigateTo("/moreInfoCards", {id: cardId});
       });
     });
 

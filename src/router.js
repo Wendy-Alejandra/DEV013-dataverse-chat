@@ -22,6 +22,14 @@ export const setRoutes = (newRoutesValue) => {
     }
     ROUTES = newRoutesValue;
 }
+const queryStringToObject = (queryString) => {
+  // convert query string to URLSearchParams
+  const params = new URLSearchParams(queryString);
+  // convert URLSearchParams to an object
+  const paramsObject = Object.fromEntries(params);
+  // return the object
+  return paramsObject;
+}
 
 const renderView = (pathname, props={}) => {
     // clear the root element
@@ -41,18 +49,32 @@ const renderView = (pathname, props={}) => {
     // add the view element to the DOM root element
   } 
 
-  export const navigateTo = (pathname, props={}) => {
+  export const navigateTo = (pathname, props) => {
     // update window history with pushState
-    const URLvisited = window.location.origin + pathname;
+    const URLvisited = window.location.origin + pathname + `${
+      props
+      ? `?${new URLSearchParams(props)}`
+      : ""}`;
     console.log(URLvisited);
+
     history.pushState({}, "", URLvisited);
+    
+   // if(props.id === 'undefined'){
+   //   URLvisited = window.location.origin + pathname;
+   //   history.pushState({}, "", URLvisited);
+   // } else{
+   //   URLvisited = window.location.origin + pathname + `?id=${props.id}`;
+   //   history.pushState({}, "", URLvisited);
+   // } 
     // render the view with the pathname and props
     renderView(pathname, props);
   }
 
   export const onURLChange = (location) => {
     // parse the location for the pathname and search params
+    const searchParam = window.location.search;
     // convert the search params to an object
+    const props = queryStringToObject(searchParam);
     // render the view with the pathname and object
-    renderView(location.pathname);
+    renderView(location.pathname, props);
   }

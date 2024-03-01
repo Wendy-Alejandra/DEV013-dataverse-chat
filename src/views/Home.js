@@ -27,7 +27,7 @@ export const Home = () => {
 
 
   const buttonGo = whiteContainer.querySelector(".button-go");
-  buttonGo.addEventListener('click', () => navigateTo ("/cards", {}));
+  buttonGo.addEventListener('click', () => navigateTo ("/cards"));
 
 
   return container;
