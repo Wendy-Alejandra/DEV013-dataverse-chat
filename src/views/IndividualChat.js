@@ -4,6 +4,7 @@ import { Header } from "../components/Header.js";
 import { Footer } from "../components/Footer.js";
 
 export const IndividualChat = (cardId) => {
+    console.log("SOY CARDID", cardId);
     const container = document.createElement("div");
     const blueContainer = document.createElement("div");
     blueContainer.className= 'background-blue';

@@ -53,7 +53,21 @@ const renderView = (pathname, props={}) => {
   export const navigateTo = (pathname, props={}) => {
     // update window history with pushState
     const URLvisited = window.location.origin + pathname;
-    console.log(URLvisited);
+    //Buscar si existe en la URL el nombre del barco (si hay un props)
+    //?
+    if (URLvisited === '?') {
+      //(si existe, le agrego a la URLvisited un new URLSearchParams)
+      const newURLvisited = new URLSearchParams(`?${cardId}`);
+      history.pushState({}, "", newURLvisited);
+      console.log("NEW URL VISITED:", newURLvisited);
+      return newURLvisited;
+    } else {
+      //(de lo contrario devuelve la URLvisited)
+      history.pushState({}, "", URLvisited);
+      console.log("URL VISITED:", URLvisited);
+      return URLvisited;
+    }
+
     history.pushState({}, "", URLvisited);
     // render the view with the pathname and props
     renderView(pathname, props);
