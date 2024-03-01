@@ -3,12 +3,12 @@ import { Footer } from "../components/Footer.js";
 import { navigateTo } from "./../router.js";
 
 export const ApiKey = (cardId) => {
-    const container = document.createElement("div");
-    const blueContainer = document.createElement("div");
-    blueContainer.className = 'background-blue';
-    const whiteContainer = document.createElement("main");
-    whiteContainer.className = 'background-white';
-    whiteContainer.innerHTML = `
+  const container = document.createElement("div");
+  const blueContainer = document.createElement("div");
+  blueContainer.className = "background-blue";
+  const whiteContainer = document.createElement("main");
+  whiteContainer.className = "background-white";
+  whiteContainer.innerHTML = `
     <header class="infor-title">
         <div class="header-API">
             <i class="bi bi-key-fill"></i>
@@ -28,15 +28,19 @@ export const ApiKey = (cardId) => {
         <a href="https://platform.openai.com/api-keys">Generate one here!</a>
     </section>
     `;
-    
-    blueContainer.append(Header(), whiteContainer);
-    container.append(blueContainer, Footer());
 
-    const close = whiteContainer.querySelector(".close");
-    close.addEventListener('click', () => {navigateTo ("/moreInfoCards", {id:cardId})});
+  blueContainer.append(Header(), whiteContainer);
+  container.append(blueContainer, Footer());
 
-    const save = whiteContainer.querySelector(".save");
-    save.addEventListener('click', () => {navigateTo ("/individualChat", {id:cardId})});
+  const close = whiteContainer.querySelector(".close");
+  close.addEventListener("click", () => {
+    navigateTo("/moreInfoCards", { id: cardId });
+  });
 
-    return container;
-}
+  const save = whiteContainer.querySelector(".save");
+  save.addEventListener("click", () => {
+    navigateTo("/individualChat", { id: cardId });
+  });
+
+  return container;
+};
