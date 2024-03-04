@@ -1,7 +1,7 @@
 import { Header } from "../components/Header.js";
 import { Footer } from "../components/Footer.js";
 import { navigateTo } from "./../router.js";
-import { setApiKey, getApiKey } from "./../lib/apiStorage.js";
+import { setApiKey } from "./../lib/apiStorage.js";
 
 export const ApiKey = ({ id: cardId }) => {
   const container = document.createElement("div");
@@ -39,12 +39,18 @@ export const ApiKey = ({ id: cardId }) => {
   });
 
   const save = whiteContainer.querySelector(".save");
-  let inputApi= whiteContainer.querySelector('.api-key').value;
+  const inputApi= whiteContainer.querySelector('.api-key');
   save.addEventListener("click", () => {
-    console.log(inputApi);
-    getApiKey(inputApi);
-    setApiKey(inputApi);
-    navigateTo("/individualChat", { id: cardId });
+    const inputApiValue = inputApi.value;
+    setApiKey(inputApiValue);
+    if (inputApiValue !== "") {
+      navigateTo("/individualChat", { id: cardId });
+    } else {
+      const incorrectApi = whiteContainer.querySelector(".incorrect-api");
+      incorrectApi.textContent = "Incorrect API Key, Try again!";
+    }
+
+    // navigateTo("/individualChat", { id: cardId });
   });
   return container;
 };
