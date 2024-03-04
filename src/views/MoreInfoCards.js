@@ -4,6 +4,8 @@ import { Footer } from "./../components/Footer.js";
 import { navigateTo } from "./../router.js";
 
 export const MoreInfoCards = ({ id: cardId }) => {
+  /* Web browser tab name */
+  document.title = "More Info Cards";
   const container = document.createElement("div");
   const blueContainer = document.createElement("div");
   blueContainer.className = "background-blue";

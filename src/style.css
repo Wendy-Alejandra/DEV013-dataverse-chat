@@ -163,7 +163,7 @@ button:hover {
 }
 /*API Key style*/
 .bi-key-fill {
-  font-size: 3rem;
+  font-size: 5rem;
   color: var(--azul-oscuro);
 }
 .header-API {
@@ -182,7 +182,7 @@ button:hover {
   justify-items: center;
   margin: 3rem 1rem;
 }
-input[type="password"] {
+input[type="text"] {
   width: 100%;
   padding: 0.5rem;
   margin: 1rem 0;
@@ -210,8 +210,13 @@ input::placeholder {
   cursor: pointer;
 }
 .section-2 {
-  /*If API Key doesn't work this block will pop up*/
+  /*If API Key doesn't work or is empty this block will pop up*/
+  display: flex;
+  justify-content: center;
+}
+.incorrect-api {
   color: var(--rojo);
+  font-size: 2rem;
 }
 .section-3 {
   display: grid;
