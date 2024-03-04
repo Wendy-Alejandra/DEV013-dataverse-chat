@@ -4,6 +4,7 @@ import { Footer } from "../components/Footer.js";
 import { navigateTo } from "../router.js";
 
 export const IndividualChat = ({ id: cardId }) => {
+  document.title = "Individual Chat";
   const container = document.createElement("div");
   const blueContainer = document.createElement("div");
   blueContainer.className = "background-blue";

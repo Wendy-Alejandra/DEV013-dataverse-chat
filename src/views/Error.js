@@ -2,6 +2,7 @@ import { Header } from "./../components/Header.js";
 import { Footer } from "./../components/Footer.js";
 
 export const Error = () => {
+  document.title = "Error 404";
   const section = document.createElement("section");
   const div = document.createElement("div");
   div.innerHTML = `

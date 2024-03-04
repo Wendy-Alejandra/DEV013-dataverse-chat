@@ -4,6 +4,8 @@ import { navigateTo } from "./../router.js";
 import { setApiKey } from "./../lib/apiStorage.js";
 
 export const ApiKey = ({ id: cardId }) => {
+  document.title = "Api Key";
+
   const container = document.createElement("div");
   const blueContainer = document.createElement("div");
   blueContainer.className = "background-blue";

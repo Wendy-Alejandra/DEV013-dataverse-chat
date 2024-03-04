@@ -2,6 +2,7 @@ import { navigateTo } from "../router.js";
 import { Footer } from "./../components/Footer.js";
 
 export const Home = () => {
+  document.title = "Home";
   const container = document.createElement("div");
   const blueContainer = document.createElement("div");
   blueContainer.className = "background-blue";

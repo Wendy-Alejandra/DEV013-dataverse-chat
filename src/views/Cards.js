@@ -12,6 +12,7 @@ import {
 } from "./../lib/dataFunctions.js";
 
 export const Cards = () => {
+  document.title = "Cards";
   const section = document.createElement("section");
   const div = document.createElement("div");
   div.appendChild(CardsRender(data));
