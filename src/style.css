@@ -19,6 +19,8 @@
   --amarillo: #e2dd82;
   --rojo: #f61836;
   --verde: #7fff00;
+  --verde-oscuro: #1C5567;
+  --verde-claro: #8DB7C3;
   --fuente: "Inter", sans-serif;
   --style: italic;
 }
@@ -254,12 +256,26 @@ input::placeholder {
   border-radius: 0 0 1rem 1rem;
   height: 37.5rem;
   box-shadow: 0 0 1.25rem 0.5rem #c3c3c333;
-  display: flex;
+  display: grid;
+  align-content: end;
+  /* display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: flex-end; */
 }
 .chat {
   padding: 0;
+}
+.user-msg {
+  background-color: var(--verde-claro);
+  font-size: 2rem;
+  color: var(--blanco);
+  margin: 1rem;
+  width: 50rem;
+  border: var(--negro) 0.1rem ;
+  border-radius: 0.7rem 0.7rem 0.7rem 0;
+}
+p {
+  
 }
 .message-bar {
   display: flex;
