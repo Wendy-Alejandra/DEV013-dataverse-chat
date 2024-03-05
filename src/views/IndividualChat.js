@@ -38,5 +38,10 @@ export const IndividualChat = ({ id: cardId }) => {
     navigateTo("/cards");
   });
 
+  const sendMessage = whiteContainer.querySelector(".send-message");
+  sendMessage.addEventListener("click", () => {
+    
+  })
+
   return container;
 };
