@@ -255,7 +255,7 @@ input::placeholder {
   height: 37.5rem;
   box-shadow: 0 0 1.25rem 0.5rem #c3c3c333;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: flex-end;
 }
 .chat {
@@ -263,8 +263,24 @@ input::placeholder {
 }
 .message-bar {
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+  padding-bottom: 2rem;  
+  width: 50rem;
+  height: 5rem;
+  justify-content: space-around;
+}
+textarea {
+  width: 45rem;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  outline: none;
+  box-shadow:var(--negro);
+  padding: 0.5rem 1rem;
+}
+button[class="send-message"] {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--negro);
 }
 
 /* Codigo dataverse proyecto 2*/
