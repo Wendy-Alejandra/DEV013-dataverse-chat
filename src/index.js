@@ -4,6 +4,7 @@ import { Cards } from "./views/Cards.js";
 import { MoreInfoCards } from "./views/MoreInfoCards.js";
 import { ApiKey } from "./views/ApiKey.js";
 import { IndividualChat } from "./views/IndividualChat.js";
+import { GroupChat } from "./views/GroupChat.js";
 import { Error } from "./views/Error.js";
 import { setRootEl, setRoutes, onURLChange } from "./router.js";
 
@@ -13,7 +14,7 @@ const routes = {
   "/cards": Cards,
   "/moreInfoCards": MoreInfoCards,
   "/ApiKey": ApiKey,
-  // "/groupChat": GroupChat,
+  "/groupChat": GroupChat,
   "/individualChat": IndividualChat,
   "/error": Error,
 };

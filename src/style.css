@@ -264,12 +264,14 @@ input::placeholder {
 .message-bar {
   display: flex;
   padding-bottom: 2rem;  
-  width: 50rem;
+  width: 70rem;
   height: 5rem;
   justify-content: space-around;
 }
 textarea {
-  width: 45rem;
+  display: flex;
+  flex-grow: 8;
+  /* width: 45rem; */
   border-radius: 1rem;
   font-size: 1.5rem;
   outline: none;
@@ -277,10 +279,13 @@ textarea {
   padding: 0.5rem 1rem;
 }
 button[class="send-message"] {
+  display: flex;
+  flex-grow: 0;
   background: transparent;
   border: none;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: var(--negro);
+  transform: rotate(45deg);
 }
 
 /* Codigo dataverse proyecto 2*/
