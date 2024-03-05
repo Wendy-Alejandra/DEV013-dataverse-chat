@@ -43,20 +43,27 @@ export const IndividualChat = ({ id: cardId }) => {
   });
 
 
-  const sendMessage = whiteContainer.querySelector(".bi-send");
+  const sendMessageButton = whiteContainer.querySelector(".bi-send");
   const textarea = whiteContainer.querySelector(".text-input");
   const userInput = whiteContainer.querySelector(".user-msg");
 
-  sendMessage.addEventListener("click", () => {
+  const sendMessage = async () => {
+    /* User message container */
     const divMessage = document.createElement("div");
     const textMessage = document.createElement("p");
-    // textMessage.className = "";
     textMessage.textContent = textarea.value;
     divMessage.append(textMessage);
     textarea.value = "";
     userInput.append(divMessage);
-  
-  })
+
+    /* System message container */
+    const systemMessage = document.createElement("div");
+    const systemTextMessage = document.createElement("p");
+    systemTextMessage
+
+  }
+
+  sendMessageButton.addEventListener("click", sendMessage);
 
   return container;
 };
