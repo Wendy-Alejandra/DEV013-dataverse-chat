@@ -24,8 +24,13 @@ export const IndividualChat = ({ id: cardId }) => {
         <button class="close"><i class="bi bi-x-lg"></i></button>
     </header>
     <article class="chat-background">
+        <section class="container-message">
+          <div class="user-msg">
+            <p class="user"></p>
+          </div>
+        </section>
         <section class="message-bar">
-            <textarea placeholder="Write a new message"></textarea>
+            <textarea class="text-input" placeholder="Write a new message"></textarea>
             <button class="send-message"><i class="bi bi-send"></i></button>
         </section>
     </article>
@@ -38,9 +43,27 @@ export const IndividualChat = ({ id: cardId }) => {
     navigateTo("/cards");
   });
 
-  const sendMessage = whiteContainer.querySelector(".send-message");
+
+  const sendMessage = whiteContainer.querySelector(".bi-send");
+  // const userMessage = whiteContainer.querySelector(".user-msg");
+  const placeholder = whiteContainer.querySelector("textarea[placeholder='Write a new message']");
+  const textarea = whiteContainer.querySelector(".text-input");
+  console.log(textarea);
+  const prueba = textarea.value;
+  const p = whiteContainer.querySelector(".user");
   sendMessage.addEventListener("click", () => {
-    
+    console.log(sendMessage);
+    console.log(textarea.value);
+    console.log("esta es la pruba:", prueba);
+    const containerMessage = textarea.value;
+    console.log("este es el contenedor:", containerMessage);
+    p.textContent = containerMessage;
+  //   if (prueba === "") {
+  //     placeholder;
+  //   } else {
+  //     const containerMessage = prueba;
+  //     p.textContent = containerMessage;
+  //   }
   })
 
   return container;
