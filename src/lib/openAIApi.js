@@ -32,5 +32,6 @@ export const communicateWithOpenAI = async (cruiseShips, userMessages) => {
 
 
   return respuesta;
+  
 };
 
