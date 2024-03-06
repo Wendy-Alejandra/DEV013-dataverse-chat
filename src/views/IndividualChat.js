@@ -2,6 +2,7 @@ import { data } from "./../data/dataset.js";
 import { Header } from "../components/Header.js";
 import { Footer } from "../components/Footer.js";
 import { navigateTo } from "../router.js";
+import { communicateWithOpenAI } from "./../lib/openAIApi.js";
 
 export const IndividualChat = ({ id: cardId }) => {
   document.title = "Individual Chat";
@@ -24,14 +25,18 @@ export const IndividualChat = ({ id: cardId }) => {
         <button class="close"><i class="bi bi-x-lg"></i></button>
     </header>
     <article class="chat-background">
-        <section class="container-message">
-          <div class="user-msg">
-          </div>
-        </section>
-        <section class="message-bar">
-            <textarea class="text-input" placeholder="Write a new message"></textarea>
-            <button class="send-message"><i class="bi bi-send"></i></button>
-        </section>
+
+      <div class="body-chat">
+      </div>
+
+      <section class="container-message">
+        <div class="user-msg">
+        </div>
+      </section>
+      <section class="message-bar">
+        <textarea class="text-input" placeholder="Write a new message"></textarea>
+        <button class="send-message"><i class="bi bi-send"></i></button>
+      </section>
     </article>
     `;
   blueContainer.append(Header(), whiteContainer);
@@ -42,28 +47,46 @@ export const IndividualChat = ({ id: cardId }) => {
     navigateTo("/cards");
   });
 
-
   const sendMessageButton = whiteContainer.querySelector(".bi-send");
-  const textarea = whiteContainer.querySelector(".text-input");
-  const userInput = whiteContainer.querySelector(".user-msg");
+  const userInput = whiteContainer.querySelector(".text-input");
+  //const userInput = whiteContainer.querySelector(".user-msg");
+  const chatWindow = whiteContainer.querySelector(".body-chat");
 
   const sendMessage = async () => {
+
     /* User message container */
-    const divMessage = document.createElement("div");
-    const textMessage = document.createElement("p");
-    textMessage.textContent = textarea.value;
-    divMessage.append(textMessage);
-    textarea.value = "";
-    userInput.append(divMessage);
+    const userInputValue = userInput.value;
+    const userContainer= document.createElement("div");
+    userContainer.className = "text-user";
+    userContainer.textContent= userInputValue;
 
-    /* System message container */
-    const systemMessage = document.createElement("div");
-    const systemTextMessage = document.createElement("p");
-    systemTextMessage
+    /* ChatAPI message container */
+    const chatAPI = document.createElement("div");
+    chatAPI.className= "text-chatAPI";
 
-  }
+    const chatAPIResponse= await communicateWithOpenAI(cruises.description, userInput);
+    if(chatAPIResponse === "error"){
+      navigateTo("/error");
+    } else{
+      chatAPI.innerHTML=`<div class="text-chatAPI">${chatAPIResponse}</div>`;
+    }
+    chatWindow.append(userContainer, chatAPI);
+
+    userInputValue="";
+
+
+   // textMessage.textContent = textarea.value;
+   // divMessage.append(textMessage);
+   // textarea.value = "";
+    //userInput.append(divMessage);
+  };
 
   sendMessageButton.addEventListener("click", sendMessage);
+  userInput.addEventListener("keyup", (event)=>{
+    if(event.key === "Enter" && userInputValue !==""){
+      sendMessage();
+    }
+  })
 
   return container;
 };
