@@ -55,10 +55,11 @@ export const IndividualChat = ({ id: cardId }) => {
   const sendMessage = async () => {
 
     /* User message container */
-    const userInputValue = userInput.value;
+    let userInputValue = userInput.value;
     const userContainer= document.createElement("div");
     userContainer.className = "text-user";
     userContainer.textContent= userInputValue;
+    userInput.value = "";
 
     /* ChatAPI message container */
     const chatAPI = document.createElement("div");
@@ -74,10 +75,10 @@ export const IndividualChat = ({ id: cardId }) => {
 
 
 
-   // textMessage.textContent = textarea.value;
-   // divMessage.append(textMessage);
-   // textarea.value = "";
-    //userInput.append(divMessage);
+    // textMessage.textContent = textarea.value;
+    // divMessage.append(textMessage);
+    // textarea.value = "";
+    // userInput.append(divMessage);
   };
   
 
@@ -97,7 +98,7 @@ export const IndividualChat = ({ id: cardId }) => {
 
   });*/
   sendMessageButton.addEventListener("click", sendMessage);
-  /*userInput.addEventListener("keyup", (event)=>{
+  userInput.addEventListener("keyup", (event)=>{
     if(event.key === "Enter" && userInputValue !==""){
       sendMessage();
     }
