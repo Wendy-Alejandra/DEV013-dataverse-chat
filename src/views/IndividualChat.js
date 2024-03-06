@@ -64,7 +64,7 @@ export const IndividualChat = ({ id: cardId }) => {
     const chatAPI = document.createElement("div");
     chatAPI.className= "text-chatAPI";
 
-    const chatAPIResponse= await communicateWithOpenAI(cruises.description, userInput);
+    const chatAPIResponse= await communicateWithOpenAI(cruises.name, userInput);
     if(chatAPIResponse === "error"){
       navigateTo("/error");
     } else{
@@ -72,7 +72,6 @@ export const IndividualChat = ({ id: cardId }) => {
     }
     chatWindow.append(userContainer, chatAPI);
 
-    userInputValue="";
 
 
    // textMessage.textContent = textarea.value;
@@ -80,13 +79,29 @@ export const IndividualChat = ({ id: cardId }) => {
    // textarea.value = "";
     //userInput.append(divMessage);
   };
+  
 
+  /*sendMessageButton.addEventListener("click", ()=>{
+    if(userInput){
+      communicateWithOpenAI(cruises.name, userMessages.input)
+      .then((res)=>res.json())
+      .then((data)=>{
+        chatWindow.append(cruises, input.value, data.choices[0].message.content)
+      }
+      )
+      .catch((error)=>{
+        console.log(error);
+      });
+    }
+   
+
+  });*/
   sendMessageButton.addEventListener("click", sendMessage);
-  userInput.addEventListener("keyup", (event)=>{
+  /*userInput.addEventListener("keyup", (event)=>{
     if(event.key === "Enter" && userInputValue !==""){
       sendMessage();
     }
-  })
+  })*/
 
   return container;
 };

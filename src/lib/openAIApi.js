@@ -3,13 +3,14 @@ import { getApiKey } from "./apiStorage.js";
 
 // obtener la apikey
 const receiveApiKey = getApiKey();
+console.log("esta es la api key:", receiveApiKey);
 
 
 export const communicateWithOpenAI = async (cruiseShips, userMessages) => {
 //Aquí es donde debes implementar la petición con fetch o axios
-  const respuesta = await fetch (`https://api.openai.com/v1/chat/completions`, {
+  const respuesta = await fetch ('https://api.openai.com/v1/chat/completions', {
     method: "POST",
-    headers:{
+    headers: {
       "Content-Type": "application/json",
       Authorization: "Bearer" + receiveApiKey,
     },
@@ -17,17 +18,17 @@ export const communicateWithOpenAI = async (cruiseShips, userMessages) => {
       model: "gpt-3.5-turbo",
       messages: [
         {
-          "role": "system",
-          "content": `You are a cruise ship: ${cruiseShips}, give short answers`,
+          role: "system",
+          content: `You are a cruise ship: ${cruiseShips}, give short answers`,
         },
         {
-          "role": "user",
-          "content": userMessages,
+          role: "user",
+          content: userMessages,
         },
       ]
     })
   });
-  console.log (respuesta);
+  console.log ("esta es la respues", respuesta);
 
 
   return respuesta;
