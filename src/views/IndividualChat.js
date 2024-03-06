@@ -102,7 +102,7 @@ export const IndividualChat = ({ id: cardId }) => {
     if(event.key === "Enter" && userInputValue !==""){
       sendMessage();
     }
-  })*/
+  })
 
   return container;
 };
