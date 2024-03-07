@@ -31,6 +31,7 @@ export const communicateWithOpenAI = async (cruiseShips, userMessages) => {
   
   try {
     const response = await fetch('https://api.openai.com/v1/chat/completions', options)
+    console.log (response);
     const data = await response.json() // .json() is an async method and that's why we have to write await before response.json()
     console.log(data);
 
