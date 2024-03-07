@@ -65,7 +65,8 @@ export const IndividualChat = ({ id: cardId }) => {
     const chatAPI = document.createElement("div");
     chatAPI.className= "text-chatAPI";
 
-    const chatAPIResponse= await communicateWithOpenAI(cruises.description, userInput);
+    const chatAPIResponse= await communicateWithOpenAI(cruises.description, userInputValue);
+    console.log(chatAPIResponse);
     if(chatAPIResponse === "error"){
       navigateTo("/error");
     } else{

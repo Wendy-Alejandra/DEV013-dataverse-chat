@@ -20,7 +20,7 @@ export const ApiKey = ({ id: cardId }) => {
         <button class="close"><i class="bi bi-x-lg"></i></button>
     </header>    
     <section class="section-1">
-            <input type="text" class="api-key" placeholder="Enter your API Key here!"></input>
+            <input type="password" class="api-key" placeholder="Enter your API Key here!"></input>
             <button class="save">Save</button>
     </section>
     <section class="section-2">
