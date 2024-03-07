@@ -17,12 +17,12 @@ export const communicateWithOpenAI = async (cruiseShips, userMessages) => {
         {
           role: "system",
           content: `You are a cruise ship: ${cruiseShips}, give short answers`,
-          max_tokens: 100
+          // max_tokens: 100
         },
         {
           role: "user",
           content: userMessages,
-          max_tokens: 100
+          // max_tokens: 100
         }
       ]
     })
@@ -33,7 +33,8 @@ export const communicateWithOpenAI = async (cruiseShips, userMessages) => {
     const response = await fetch('https://api.openai.com/v1/chat/completions', options)
     console.log (response);
     const data = await response.json() // .json() is an async method and that's why we have to write await before response.json()
-    console.log(data);
+    console.log(data.choices[0].message.content,"respuesta OpenAI");
+    return data.choices[0].message.content;
 
   } catch (error) {
     console.error(error);
