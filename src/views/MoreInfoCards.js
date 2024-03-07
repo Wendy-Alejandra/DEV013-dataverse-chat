@@ -2,6 +2,7 @@ import { Header } from "./../components/Header.js";
 import { data } from "./../data/dataset.js";
 import { Footer } from "./../components/Footer.js";
 import { navigateTo } from "./../router.js";
+import { getApiKey } from "./../lib/apiStorage.js";
 
 export const MoreInfoCards = ({ id: cardId }) => {
   /* Web browser tab name */
@@ -44,8 +45,19 @@ export const MoreInfoCards = ({ id: cardId }) => {
 
   const individualChat = whiteContainer.querySelector(".bi-chat-text");
   individualChat.addEventListener("click", () => {
-    navigateTo("/ApiKey", { id: cardId });
+    const apiKeySave = getApiKey();
+    if (apiKeySave !== "") {
+      navigateTo("/individualChat", { id: cardId });
+    } else {
+      navigateTo("/ApiKey", { id: cardId });
+    }
   });
+  // if (inputApiValue !== "") {
+  //   navigateTo("/individualChat", { id: cardId });
+  // } else {
+  //   const incorrectApi = whiteContainer.querySelector(".incorrect-api");
+  //   incorrectApi.textContent = "Incorrect API Key, Try again!";
+  // }
 
   return container;
 };
