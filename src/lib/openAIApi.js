@@ -37,7 +37,7 @@ export const communicateWithOpenAI = async (cruiseShips, userMessages) => {
     return data.choices[0].message.content;
 
   } catch (error) {
-    console.error(error);
+    console.log(error);
   }
 };
 
