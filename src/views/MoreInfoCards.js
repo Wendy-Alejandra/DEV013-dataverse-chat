@@ -48,9 +48,9 @@ export const MoreInfoCards = ({ id: cardId }) => {
     //navigateTo("/ApiKey", { id: cardId });
     const apiKeySave = getApiKey();
     if (apiKeySave !== null) {
-       navigateTo("/individualChat", { id: cardId });
+      navigateTo("/individualChat", { id: cardId });
     } else {
-       navigateTo("/ApiKey", { id: cardId }); //See searchParam for ApiKey view
+      navigateTo("/ApiKey", { id: cardId }); //See searchParam for ApiKey view
     }
   });
   return container;
