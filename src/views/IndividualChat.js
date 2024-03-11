@@ -29,10 +29,6 @@ export const IndividualChat = ({ id: cardId }) => {
       <div class="body-chat">
       </div>
 
-      <section class="container-message">
-        <div class="user-msg">
-        </div>
-      </section>
       <section class="message-bar">
         <textarea class="text-input" placeholder="Write a new message"></textarea>
         <button class="send-message"><i class="bi bi-send"></i></button>
@@ -49,7 +45,6 @@ export const IndividualChat = ({ id: cardId }) => {
 
   const sendMessageButton = whiteContainer.querySelector(".bi-send");
   const userInput = whiteContainer.querySelector(".text-input");
-  //const userInput = whiteContainer.querySelector(".user-msg");
   const chatWindow = whiteContainer.querySelector(".body-chat");
 
   const sendMessage = async () => {
@@ -57,13 +52,13 @@ export const IndividualChat = ({ id: cardId }) => {
     /* User message container */
     const userInputValue = userInput.value;
     const userContainer= document.createElement("div");
-    userContainer.className = "text-user";
+    userContainer.className = "textBubble user";
     userContainer.textContent= userInputValue;
     userInput.value = "";
 
     /* ChatAPI message container */
     const chatAPI = document.createElement("div");
-    chatAPI.className= "text-chatAPI";
+    chatAPI.className= "textBubble chatAPI";
 
     const chatAPIResponse= await communicateWithOpenAI(cruises.description, userInputValue);
     console.log(chatAPIResponse);

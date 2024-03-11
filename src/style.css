@@ -254,6 +254,7 @@ input::placeholder {
   background-color: var(--gris-claro);
   margin: auto;
   border-radius: 0 0 1rem 1rem;
+  padding: 1rem;
   height: 37.5rem;
   box-shadow: 0 0 1.25rem 0.5rem #c3c3c333;
   display: grid;
@@ -265,39 +266,49 @@ input::placeholder {
 .chat {
   padding: 0;
 }
-.user-msg {
-  background-color: var(--verde-claro);
+.body-chat {
+  /* display: flex; */
+
+}
+.textBubble {
   font-size: 2rem;
   color: var(--blanco);
   margin: 1rem;
   width: 50rem;
-  border: var(--negro) 0.1rem ;
-  border-radius: 0.7rem 0.7rem 0.7rem 0;
+  border: var(--negro) 0.1rem ; 
 }
-
+.user {
+  display: block;
+  float:right;
+  background-color: var(--verde-oscuro);
+  border-radius: 0.7rem 0.7rem 0 0.7rem;
+  padding: 0.5rem;
+}
+.chatAPI {
+  display: block;
+  float: left;
+  background-color: var(--verde-claro);
+  border-radius: 0.7rem 0.7rem 0.7rem 0;
+  padding: 0.5rem;
+}
 .message-bar {
   display: flex;
-  padding-bottom: 2rem;  
-  width: 70rem;
-  height: 5rem;
-  justify-content: space-around;
+  padding-bottom: 1rem;  
+  justify-content: center;
+  align-items: center;
 }
 textarea {
-  display: flex;
-  flex-grow: 8;
-  /* width: 45rem; */
+  width: 60rem;
   border-radius: 1rem;
   font-size: 1.5rem;
   outline: none;
   box-shadow:var(--negro);
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
 }
 button[class="send-message"] {
-  display: flex;
-  flex-grow: 0;
   background: transparent;
   border: none;
-  font-size: 2rem;
+  font-size: 3rem;
   color: var(--negro);
   transform: rotate(45deg);
 }
