@@ -20,7 +20,7 @@ export const GroupChat = () => {
   list.innerHTML= contacts;
 
   const whiteContainer= document.createElement("div");
-  whiteContainer.className = "background-white";
+  whiteContainer.className = "background-white group";
   const whiteContainerSecondPart = document.createElement("div");
   whiteContainerSecondPart.innerHTML= `
     <header>

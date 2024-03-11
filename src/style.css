@@ -303,6 +303,12 @@ button[class="send-message"] {
   color: var(--negro);
   transform: rotate(45deg);
 }
+/* Group chat styles*/
+.group {
+  display: flex;
+  flex-direction: row;
+}
+
 
 /* Codigo dataverse proyecto 2*/
 

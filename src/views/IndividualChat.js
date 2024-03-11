@@ -55,7 +55,7 @@ export const IndividualChat = ({ id: cardId }) => {
   const sendMessage = async () => {
 
     /* User message container */
-    let userInputValue = userInput.value;
+    const userInputValue = userInput.value;
     const userContainer= document.createElement("div");
     userContainer.className = "text-user";
     userContainer.textContent= userInputValue;
@@ -100,7 +100,7 @@ export const IndividualChat = ({ id: cardId }) => {
   });*/
   sendMessageButton.addEventListener("click", sendMessage);
   userInput.addEventListener("keyup", (event)=>{
-    if(event.key === "Enter" && userInputValue !==""){
+    if(event.key === "Enter" && userInput.value !==""){
       sendMessage();
     }
   })
