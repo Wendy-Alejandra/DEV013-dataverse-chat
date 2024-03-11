@@ -45,13 +45,13 @@ export const MoreInfoCards = ({ id: cardId }) => {
 
   const individualChat = whiteContainer.querySelector(".bi-chat-text");
   individualChat.addEventListener("click", () => {
-    navigateTo("/ApiKey", { id: cardId });
-    // const apiKeySave = getApiKey();
-    // if (apiKeySave !== "") {
-    //   navigateTo("/individualChat", { id: cardId });
-    // } else {
-    //   navigateTo("/ApiKey", { id: cardId }); //See searchParam for ApiKey view
-    // }
+    //navigateTo("/ApiKey", { id: cardId });
+    const apiKeySave = getApiKey();
+    if (apiKeySave !== null) {
+      navigateTo("/individualChat", { id: cardId });
+    } else {
+      navigateTo("/ApiKey", { id: cardId }); //See searchParam for ApiKey view
+    }
   });
   return container;
 };
