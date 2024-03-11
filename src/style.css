@@ -274,9 +274,7 @@ input::placeholder {
   border: var(--negro) 0.1rem ;
   border-radius: 0.7rem 0.7rem 0.7rem 0;
 }
-p {
-  
-}
+
 .message-bar {
   display: flex;
   padding-bottom: 2rem;  

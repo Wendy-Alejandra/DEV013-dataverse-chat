@@ -100,7 +100,7 @@ export const IndividualChat = ({ id: cardId }) => {
   });*/
   sendMessageButton.addEventListener("click", sendMessage);
   userInput.addEventListener("keyup", (event)=>{
-    if(event.key === "Enter" && userInputValue !==""){
+    if(event.key === "Enter" && userInput.value !==""){
       sendMessage();
     }
   })
