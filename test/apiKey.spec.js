@@ -1,15 +1,30 @@
-// // test/apiKey.spec.js
+// Importing ApiStorage.js functions
+import { getApiKey, setApiKey } from "./../src/lib/apiStorage.js";
 
-// import { getApiKey, setApiKey } from "../src/lib/apiKey.js";
+// getApiKey() test
+describe("getApiKey", () => {
+  it("should return null if API key is not set", () => {
+    expect(getApiKey()).toBeNull();
+  });
+  it("should return the API key if it is set", () => {
+    const apiKey = "test-ApiKey1234";
+    localStorage.setItem("apiKey", apiKey);
+    expect(getApiKey()).toEqual(apiKey);
+  });
+});
+// setApiKey() test
+describe("setApiKey", () => {
+  it("should return null if API key is not saved", () => {
+    const apiKey = "";
+    setApiKey(apiKey);
+    expect(getApiKey(apiKey)).toBeFalsy();
+  });
 
-// describe("getApiKey", () => {
-//   it("debería devolver el valor de la API Key", () => {
-//     // Desarrolla el test correspondiente aquí
-//   });
-// });
-
-// describe("setApiKey", () => {
-//   it("debería establecer correctamente la API Key", () => {
-//     // Desarrolla el test correspondiente aquí
-//   });
-// });
+  it("should save the API key in localStorage", () => {
+    const apiKey = "test-ApiKey1234";
+    setApiKey(apiKey);
+    localStorage.setItem("apiKey", apiKey);
+    const getValue = getApiKey("apiKey");
+    expect(getValue).toEqual(apiKey);
+  });
+});
