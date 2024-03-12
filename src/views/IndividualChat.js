@@ -19,7 +19,7 @@ export const IndividualChat = ({ id: cardId }) => {
             <img class="imag-chat" itemprop="image" src="${cruises.imageUrl}" alt="${cruises.name}">
         </figure>
         <div class="header-chat">
-            <h2>${cruises.name}</h2>
+            <h2 class="chat-header">${cruises.name}</h2>
             <p><i class="bi bi-circle-fill"></i>Online</p>
         </div>
         <button class="close"><i class="bi bi-x-lg"></i></button>
@@ -65,7 +65,7 @@ export const IndividualChat = ({ id: cardId }) => {
     if(chatAPIResponse === "error"){
       navigateTo("/error");
     } else{
-      chatAPI.innerHTML=`<div class="text-chatAPI">${chatAPIResponse}</div>`;
+      chatAPI.innerHTML=`${chatAPIResponse}`;
     }
     chatWindow.append(userContainer, chatAPI);
 
