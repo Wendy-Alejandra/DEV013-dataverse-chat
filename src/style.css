@@ -325,7 +325,32 @@ button[class="send-message"] {
 .group {
   display: flex;
   flex-direction: row;
+  /*display: grid;
+  grid-template-columns: 50%, 50%;
+  grid-auto-flow: column;*/
+
+} 
+.contacts-style{
+  display: flex;
+  align-items: center;
+  border-bottom: 0.01rem var(--negro) solid;
 }
+.list{
+  margin: 0;
+  padding: 0;
+
+}
+.imag-chat-group {
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  margin: 0.5rem;
+}
+.chat-group-text{
+ border: 0.01rem var(--negro) solid;;
+  width: 60rem;
+}
+
 
 
 /* Codigo dataverse proyecto 2*/

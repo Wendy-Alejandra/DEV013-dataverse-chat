@@ -1,7 +1,7 @@
 import { data } from "./../data/dataset.js";
 import { Header } from "../components/Header.js";
 import { Footer } from "../components/Footer.js";
-//import { navigateTo } from "../router.js";
+import { navigateTo } from "../router.js";
 
 export const GroupChat = () => {
   document.title = "Group Chat";
@@ -9,12 +9,17 @@ export const GroupChat = () => {
   const blueContainer= document.createElement('div');
   blueContainer.className = "background-blue";
   const list= document.createElement("div");
+  list.className = "list";
   let contacts= "";
   data.forEach((card)=>{
     contacts += `
-    <img class="imag-chat" src="${card.imageUrl}" alt="${card.name}">
-    <h3 class= "name-cruise">${card.name}</h3>
-    <p>Online</p>
+    <section class="contacts-style">
+      <img class="imag-chat-group" src="${card.imageUrl}" alt="${card.name}">
+      <div class= "header-chat-group">
+        <h3 class= "name-cruise">${card.name}</h3>
+        <p><i class="bi bi-circle-fill"></i>Online</p>
+      </div>
+    </section>
     `
   });
   list.innerHTML= contacts;
@@ -22,19 +27,15 @@ export const GroupChat = () => {
   const whiteContainer= document.createElement("div");
   whiteContainer.className = "background-white group";
   const whiteContainerSecondPart = document.createElement("div");
+  whiteContainerSecondPart.className = "chat-group-text";
   whiteContainerSecondPart.innerHTML= `
-    <header>
+    <header class="infor-title">
       <h2>Group Chat</h2>
       <button class="close"><i class="bi bi-x-lg"></i></button>
     </header>
     <article class="chat-background">
-
       <div class="body-chat">
       </div>
-
-      <section class="container-message">
-        <div class="user-msg">
-        </div>
       </section>
       <section class="message-bar">
         <textarea class="text-input" placeholder="Write a new message"></textarea>
@@ -45,6 +46,11 @@ export const GroupChat = () => {
   whiteContainer.append(list, whiteContainerSecondPart);
   blueContainer.append(Header(), whiteContainer);
   container.append(blueContainer, Footer());
+
+  const buttonClose = whiteContainer.querySelector(".close");
+  buttonClose.addEventListener("click", () => {
+    navigateTo("/cards");
+  });
 
  
   return container;
