@@ -8,8 +8,12 @@ export const GroupChat = () => {
   const container = document.createElement("div");
   const blueContainer= document.createElement('div');
   blueContainer.className = "background-blue";
+  const containerContacts= document.createElement("aside");
+  containerContacts.className = "container-contacts";
   const list= document.createElement("div");
   list.className = "list";
+  const titleContacts = document.createElement("h2");
+  titleContacts.textContent= "Contacts";
   let contacts= "";
   data.forEach((card)=>{
     contacts += `
@@ -23,9 +27,11 @@ export const GroupChat = () => {
     `
   });
   list.innerHTML= contacts;
+  containerContacts.append(titleContacts, list);
+  
 
   const whiteContainer= document.createElement("div");
-  whiteContainer.className = "background-white group";
+  whiteContainer.className = "background-white group chat";
   const whiteContainerSecondPart = document.createElement("div");
   whiteContainerSecondPart.className = "chat-group-text";
   whiteContainerSecondPart.innerHTML= `
@@ -33,7 +39,7 @@ export const GroupChat = () => {
       <h2>Group Chat</h2>
       <button class="close"><i class="bi bi-x-lg"></i></button>
     </header>
-    <article class="chat-background">
+    <article class="chat-background group-background">
       <div class="body-chat">
       </div>
       </section>
@@ -43,7 +49,7 @@ export const GroupChat = () => {
       </section>
     </article>`;
 
-  whiteContainer.append(list, whiteContainerSecondPart);
+  whiteContainer.append(containerContacts, whiteContainerSecondPart);
   blueContainer.append(Header(), whiteContainer);
   container.append(blueContainer, Footer());
 

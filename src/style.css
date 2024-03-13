@@ -325,6 +325,7 @@ button[class="send-message"] {
 .group {
   display: flex;
   flex-direction: row;
+  padding: 0;
   /*display: grid;
   grid-template-columns: 50%, 50%;
   grid-auto-flow: column;*/
@@ -333,12 +334,29 @@ button[class="send-message"] {
 .contacts-style{
   display: flex;
   align-items: center;
-  border-bottom: 0.01rem var(--negro) solid;
+  border-bottom: 1px solid #ddd;
+  /*border-bottom: 0.01rem var(--negro) solid;*/
 }
 .list{
+  width: 388px;
+  height: 500px;
+  overflow: auto;
   margin: 0;
   padding: 0;
+  border: 1px solid #ccc; /* Añade un borde para mayor claridad */
+  border-radius: 0 0 0 1rem;
+}
+.list::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
 
+.list::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+.list::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 1rem;
 }
 .imag-chat-group {
   border-radius: 50%;
@@ -347,11 +365,13 @@ button[class="send-message"] {
   margin: 0.5rem;
 }
 .chat-group-text{
- border: 0.01rem var(--negro) solid;;
-  width: 60rem;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
-
-
+.group-background{
+  border-radius: 0 0 1rem 0 ;
+}
 
 /* Codigo dataverse proyecto 2*/
 
