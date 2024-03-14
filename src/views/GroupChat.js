@@ -35,9 +35,12 @@ export const GroupChat = () => {
   const whiteContainerSecondPart = document.createElement("div");
   whiteContainerSecondPart.className = "chat-group-text";
   whiteContainerSecondPart.innerHTML = `
-    <header class="infor-title">
-      <h2>Group Chat</h2>
-      <button class="close"><i class="bi bi-x-lg"></i></button>
+    <header class="infor-title-group">
+      <h2 class="group-chat-title">Group Chat</h2>
+      <div class="container-buttons">
+        <button class="apiKey-symbol-chat"><i class="bi bi-key-fill"></i></button>
+        <button class="close"><i class="bi bi-x-lg"></i></button>
+      </div>
     </header>
     <article class="chat-background group-background">
       <div class="body-chat">
@@ -57,6 +60,10 @@ export const GroupChat = () => {
   buttonClose.addEventListener("click", () => {
     navigateTo("/cards");
   });
+  const keyButton = whiteContainer.querySelector(".apiKey-symbol-chat");
+  keyButton.addEventListener("click", () => {
+    navigateTo("/ApiKey");
+  })
 
   /* Create const to access html attributes */
   const sendMessageButton = whiteContainer.querySelector(".bi-send");
@@ -73,38 +80,18 @@ export const GroupChat = () => {
 
     chatWindow.append(userContainer);
 
-    /* Create send message function for the openAI chat system only */
-    // Función para seleccionar aleatoriamente n elementos de un array
-    // function seleccionarAleatoriamente(data) {
-    //   const seleccionados = [];
-    //   const copiaArray = data.slice(); // Hacemos una copia del array para no modificar el original
-    //   for (let i = 0; i < 3; i++) {
-    //     const indiceAleatorio = Math.floor(Math.random() * data.length); // Generamos un índice aleatorio
-    //     seleccionados.push(copiaArray.splice(indiceAleatorio, 1)[0]); // Sacamos un elemento aleatorio y lo añadimos a la lista de seleccionados
-    //   }
-    //   return seleccionados;
-    // }
-    // const nuevoObjeto = seleccionarAleatoriamente(data)
     data.forEach(async (element) => {
-      // const sendMessage = async () => {
-      /* ChatAPI message containers for the 24 objects */
       const chatAPI = document.createElement("div");
       chatAPI.className = "textBubble chatAPI";
       const chatAPIResponse = await communicateWithOpenAI(
         element.description,
         userInputValue
       );
-      console.log(chatAPIResponse);
-      // if(chatAPIResponse === "error"){
-      //   navigateTo("/error");
-      // } else{
-      //   chatAPI.innerHTML=`${chatAPIResponse}`;
+
       chatAPI.innerHTML = `<h2>${element.name}</h2>
       <p>${chatAPIResponse}</p>
       `;
-      // }
       chatWindow.append(chatAPI);
-      // };
     });
   });
   // userInput.addEventListener("keyup", (event) => {

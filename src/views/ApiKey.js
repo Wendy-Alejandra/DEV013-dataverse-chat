@@ -1,7 +1,7 @@
 import { Header } from "../components/Header.js";
 import { Footer } from "../components/Footer.js";
 import { navigateTo } from "./../router.js";
-import { setApiKey, deleteApiKey } from "./../lib/apiStorage.js";
+import { setApiKey, deleteApiKey, getApiKey } from "./../lib/apiStorage.js";
 
 export const ApiKey = ({ id: cardId }) => {
   document.title = "Api Key";
@@ -21,7 +21,8 @@ export const ApiKey = ({ id: cardId }) => {
     </header>    
     <section class="section-1">
             <input type="text" class="api-key" placeholder="Enter your API Key here!"></input>
-            <button class="save">Save</button>
+            <button class="save button-key">Save</button>
+            <button class="delete button-key">Delete</button>
     </section>
     <section class="section-2">
         <p class="incorrect-api"></p>
@@ -37,28 +38,45 @@ export const ApiKey = ({ id: cardId }) => {
 
   const close = whiteContainer.querySelector(".close");
   close.addEventListener("click", () => {
-    navigateTo("/moreInfoCards", { id: cardId });
+    navigateTo("/cards");
   });
 
   const save = whiteContainer.querySelector(".save");
-  const inputApi= whiteContainer.querySelector('.api-key');
-  
-  //botón save
-  // Agregar la función deleteApiKey para que cambie el botón a delete cuando la apikey esté guardada
+  const deleteButton = whiteContainer.querySelector(".delete");
+  const inputApi = whiteContainer.querySelector('.api-key');
+  const incorrectApi = whiteContainer.querySelector(".incorrect-api");
+
+  // Al cargar la vista, comprobamos si hay una API key guardada
+  const savedApiKey = getApiKey();
+  if (savedApiKey) {
+    inputApi.value = savedApiKey;
+    save.style.display = "none";
+    deleteButton.style.display = "inline";
+    deleteButton.style.visibility = "visible";
+  }
+
   save.addEventListener("click", () => {
-    const inputApiValue = inputApi.value;
-    setApiKey(inputApiValue);
+    const inputApiValue = inputApi.value.trim();
+
     if (inputApiValue !== "") {
+      // Guardamos la API key
+      setApiKey(inputApiValue);
+      // Actualizamos el botón y guardamos la API key
+      save.style.display = "none";
+      deleteButton.style.display = "inline";
       navigateTo("/individualChat", { id: cardId });
     } else {
-      const incorrectApi = whiteContainer.querySelector(".incorrect-api");
-      incorrectApi.textContent = "Incorrect API Key, Try again!";
+      incorrectApi.textContent = "Please enter a valid API Key.";
     }
-    // Crear nuestro botón delete
-    // cuando la apikey esté guardada entonces se mostrará el boton delete
-    // cuando la apikey no este guardada entonces mostrará el botón save
+  });
 
-
+  deleteButton.addEventListener("click", () => {
+    // Eliminamos la API key
+    deleteApiKey();
+    // Limpiamos el campo de entrada y mostramos el botón "Save"
+    inputApi.value = "";
+    save.style.display = "inline";
+    deleteButton.style.display = "none";
   });
   return container;
 };

@@ -177,6 +177,9 @@ button:hover {
   width: 1.5rem;
   height: 1.5rem;
 }
+.delete {
+  visibility: hidden;
+}
 .section-1 {
   display: grid;
   grid-template-columns: 4fr 1fr;
@@ -199,7 +202,7 @@ input::placeholder {
   padding: 0.5rem;
   font-size: 1.5rem;
 }
-.save {
+.button-key {
   display: inline-block;
   padding: 1rem 2.5rem;
   margin: 1rem;
@@ -380,6 +383,15 @@ button[class="send-message"] {
   width: 100%;
   padding: 0;
   margin: 0;
+}
+.infor-title-group {
+  display: grid;
+  grid-template-columns: 90% 10%;
+  justify-items: left;
+  align-items: center;
+}
+.group-chat-title {
+  padding-left: 1.5rem;
 }
 .group-background{
   border-radius: 0 0 1rem 0 ;
