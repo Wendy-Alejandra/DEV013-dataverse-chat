@@ -11,3 +11,8 @@ export const setApiKey = (key) => {
   return saveApiKey;
 
 };
+
+export const deleteApiKey = () => {
+  const deleteApiKey = localStorage.removeItem("apiKey");
+  return deleteApiKey;
+}
