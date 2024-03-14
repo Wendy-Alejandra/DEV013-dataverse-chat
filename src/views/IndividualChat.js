@@ -69,30 +69,8 @@ export const IndividualChat = ({ id: cardId }) => {
     }
     chatWindow.append(userContainer, chatAPI);
 
-
-
-    // textMessage.textContent = textarea.value;
-    // divMessage.append(textMessage);
-    // textarea.value = "";
-    // userInput.append(divMessage);
   };
-  
 
-  /*sendMessageButton.addEventListener("click", ()=>{
-    if(userInput){
-      communicateWithOpenAI(cruises.name, userMessages.input)
-      .then((res)=>res.json())
-      .then((data)=>{
-        chatWindow.append(cruises, input.value, data.choices[0].message.content)
-      }
-      )
-      .catch((error)=>{
-        console.log(error);
-      });
-    }
-   
-
-  });*/
   sendMessageButton.addEventListener("click", sendMessage);
   userInput.addEventListener("keyup", (event)=>{
     if(event.key === "Enter" && userInput.value !==""){

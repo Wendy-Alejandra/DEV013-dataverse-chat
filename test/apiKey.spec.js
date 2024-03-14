@@ -14,7 +14,7 @@ describe("getApiKey", () => {
 });
 // setApiKey() test
 describe("setApiKey", () => {
-  it("should return null if API key is not saved", () => {
+  it("should return API key is not saved", () => {
     const apiKey = "";
     setApiKey(apiKey);
     expect(getApiKey(apiKey)).toBeFalsy();
