@@ -1,5 +1,5 @@
 // Importing ApiStorage.js functions
-import { getApiKey, setApiKey } from "./../src/lib/apiStorage.js";
+import { getApiKey, setApiKey, deleteApiKey } from "./../src/lib/apiStorage.js";
 
 // getApiKey() test
 describe("getApiKey", () => {
@@ -12,6 +12,7 @@ describe("getApiKey", () => {
     expect(getApiKey()).toEqual(apiKey);
   });
 });
+
 // setApiKey() test
 describe("setApiKey", () => {
   it("should return API key is not saved", () => {
@@ -28,3 +29,14 @@ describe("setApiKey", () => {
     expect(getValue).toEqual(apiKey);
   });
 });
+
+// deleteApiKey() test
+describe("deleteApiKey", () => {
+  it("Should delete the API Key saved in local storage", () => {
+    const apiKey = "test-deleteApi1234";
+    const testDelete = deleteApiKey(apiKey);
+    const result = localStorage.removeItem("apiKey");
+    expect(result).toBe(testDelete);
+  });
+});
+
