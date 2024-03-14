@@ -1,7 +1,7 @@
 import { Header } from "../components/Header.js";
 import { Footer } from "../components/Footer.js";
 import { navigateTo } from "./../router.js";
-import { setApiKey } from "./../lib/apiStorage.js";
+import { setApiKey, deleteApiKey } from "./../lib/apiStorage.js";
 
 export const ApiKey = ({ id: cardId }) => {
   document.title = "Api Key";
@@ -14,7 +14,7 @@ export const ApiKey = ({ id: cardId }) => {
   whiteContainer.innerHTML = `
     <header class="infor-title">
         <div class="header-API">
-            <i class="bi bi-key-fill"></i>
+            <p class="apiKey-symbol"><i class="bi bi-key-fill"></i></p>
             <h2>API Key needed</h2>
         </div>
         <button class="close"><i class="bi bi-x-lg"></i></button>
@@ -42,6 +42,9 @@ export const ApiKey = ({ id: cardId }) => {
 
   const save = whiteContainer.querySelector(".save");
   const inputApi= whiteContainer.querySelector('.api-key');
+  
+  //botón save
+  // Agregar la función deleteApiKey para que cambie el botón a delete cuando la apikey esté guardada
   save.addEventListener("click", () => {
     const inputApiValue = inputApi.value;
     setApiKey(inputApiValue);
@@ -51,8 +54,11 @@ export const ApiKey = ({ id: cardId }) => {
       const incorrectApi = whiteContainer.querySelector(".incorrect-api");
       incorrectApi.textContent = "Incorrect API Key, Try again!";
     }
+    // Crear nuestro botón delete
+    // cuando la apikey esté guardada entonces se mostrará el boton delete
+    // cuando la apikey no este guardada entonces mostrará el botón save
 
-    // navigateTo("/individualChat", { id: cardId });
+
   });
   return container;
 };

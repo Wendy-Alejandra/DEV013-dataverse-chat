@@ -163,7 +163,7 @@ button:hover {
   font-size: 2rem;
 }
 /*API Key style*/
-.bi-key-fill {
+.apiKey-symbol {
   font-size: 5rem;
   color: var(--azul-oscuro);
 }
@@ -229,7 +229,7 @@ input::placeholder {
 /* IndividualChat style*/
 .title-chat {
   display: grid;
-  grid-template-columns: 5% 90% 5%;
+  grid-template-columns: 5% 85% 10%;
   justify-items: start;
   align-items: center;
 }
@@ -249,6 +249,18 @@ input::placeholder {
   color: var(--verde);
   font-size: 0.7rem;
   margin-right: 0.2rem;
+}
+.container-buttons {
+  display: flex;
+}
+.apiKey-symbol-chat{
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: 3rem;
+  color: var(--azul);
+  background: none;
+
 }
 .chat-background {
   background-color: var(--gris-claro);
