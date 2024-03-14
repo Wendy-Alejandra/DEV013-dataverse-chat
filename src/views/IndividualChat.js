@@ -50,7 +50,7 @@ export const IndividualChat = ({ id: cardId }) => {
   /* Api key return to apikey view button added */
   const keyButton = whiteContainer.querySelector(".apiKey-symbol-chat");
   keyButton.addEventListener("click", () => {
-    navigateTo("/ApiKey");
+    navigateTo("/ApiKey", {id: cardId});
   })
 
   const sendMessageButton = whiteContainer.querySelector(".bi-send");
