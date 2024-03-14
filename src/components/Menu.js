@@ -1,4 +1,5 @@
 import { navigateTo } from "../router.js";
+// import { getApiKey } from "./../lib/apiStorage.js";
 export const Menu = () => {
   const nav = document.createElement("nav");
   nav.innerHTML = `
@@ -28,6 +29,16 @@ export const Menu = () => {
     `;
 
   nav.setAttribute("id", "menu");
+
+  // const chatGrupalButton = nav.querySelector('button[data-testid="grupal-chat"]');
+  // chatGrupalButton.addEventListener('click', ()=>{
+  //   if (getApiKey()) {
+  //     navigateTo("/groupChat");
+  //   } else {
+  //     navigateTo("/ApiKey");
+  //     console.log(navigateTo("/ApiKey"));
+  //   }
+  // })
 
   const chatGrupalButton = nav.querySelector('button[data-testid="grupal-chat"]');
   chatGrupalButton.addEventListener('click', ()=>{
