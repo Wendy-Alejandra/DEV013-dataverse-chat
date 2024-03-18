@@ -1,10 +1,9 @@
 // Importa la función para obtener la API KEY desde apiKey.js
 import { getApiKey } from './apiStorage.js';
 
-const receiveApiKey = getApiKey();
-
 export const communicateWithOpenAI = async (cruiseShips, userMessages) => {
   //Aquí es donde debes implementar la petición con fetch o axios
+  const receiveApiKey = getApiKey();
   const options = {
     method: 'POST',
     headers: {
@@ -33,7 +32,7 @@ export const communicateWithOpenAI = async (cruiseShips, userMessages) => {
     const response = await fetch('https://api.openai.com/v1/chat/completions', options)
     console.log (response);
     const data = await response.json() // .json() is an async method and that's why we have to write await before response.json()
-    console.log(data.choices[0].message.content,"respuesta OpenAI");
+    console.log(data,"respuesta OpenAI");
     return data.choices[0].message.content;
 
   } catch (error) {
