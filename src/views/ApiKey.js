@@ -64,7 +64,12 @@ export const ApiKey = ({ id: cardId }) => {
       // Actualizamos el botón y guardamos la API key
       save.style.display = "none";
       deleteButton.style.display = "inline";
-      navigateTo("/individualChat", { id: cardId });
+      if (cardId === null || cardId === undefined) {
+        navigateTo("/groupChat");
+      } else {
+        navigateTo("/individualChat", { id: cardId });
+      }
+
     } else {
       incorrectApi.textContent = "Please enter a valid API Key.";
     }

@@ -1,5 +1,5 @@
 import { navigateTo } from "../router.js";
-// import { getApiKey } from "./../lib/apiStorage.js";
+import { getApiKey } from "./../lib/apiStorage.js";
 export const Menu = () => {
   const nav = document.createElement("nav");
   nav.innerHTML = `
@@ -42,7 +42,15 @@ export const Menu = () => {
 
   const chatGrupalButton = nav.querySelector('button[data-testid="grupal-chat"]');
   chatGrupalButton.addEventListener('click', ()=>{
-    navigateTo("/groupChat");
+    // ver si api key está guardada
+    // redirigir a group chat
+    // si no esta guardada la api key me mande a la vista apikey
+    const apiKeySave = getApiKey();
+    if (apiKeySave !== null) {
+      navigateTo("/groupChat", { id: null });
+    } else {
+      navigateTo("/ApiKey", { id: null }); //See searchParam for ApiKey view
+    }
 
   })
   return nav;
