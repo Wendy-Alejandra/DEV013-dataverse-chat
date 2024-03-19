@@ -30,28 +30,10 @@ export const Menu = () => {
 
   nav.setAttribute("id", "menu");
 
-  // const chatGrupalButton = nav.querySelector('button[data-testid="grupal-chat"]');
-  // chatGrupalButton.addEventListener('click', ()=>{
-  //   if (getApiKey()) {
-  //     navigateTo("/groupChat");
-  //   } else {
-  //     navigateTo("/ApiKey");
-  //     console.log(navigateTo("/ApiKey"));
-  //   }
-  // })
-
   const chatGrupalButton = nav.querySelector('button[data-testid="grupal-chat"]');
   chatGrupalButton.addEventListener('click', ()=>{
-    // ver si api key está guardada
-    // redirigir a group chat
-    // si no esta guardada la api key me mande a la vista apikey
     const apiKeySave = getApiKey();
-    if (apiKeySave !== null) {
-      navigateTo("/groupChat", { id: null });
-    } else {
-      navigateTo("/ApiKey", { id: null }); //See searchParam for ApiKey view
-    }
-
+    (apiKeySave !== null) ? navigateTo("/groupChat", { id: null }):navigateTo("/ApiKey", { id: null });
   })
   return nav;
 };

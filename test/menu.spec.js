@@ -8,6 +8,10 @@ jest.mock("./../src/router.js", () => ({
   navigateTo: jest.fn(),
 }));
 
+jest.mock("./../src/lib/apiStorage.js", () => ({
+  getApiKey: jest.fn(),
+}));
+
 describe('Menu component', () => {
   let menu;
   //Runs before the test state to add the menu to the body
@@ -28,15 +32,20 @@ describe('Menu component', () => {
     expect(menu.querySelector('button[data-testid="grupal-chat"]')).toBeTruthy();
     expect(menu.querySelector('button[data-testid="button-clear"]')).toBeTruthy();
   });
-  
-  it('Clicking on group chat button should navigate to "/groupChat"', () => {
+
+  it('Clicking group chat button with API Key should navigate to "/groupChat"', () => {
+    getApiKey.mockReturnValue("apiKeyValidated");
     const chatGrupalButton = menu.querySelector('button[data-testid="grupal-chat"]');
-    const apiKeySave = getApiKey();
     fireEvent.click(chatGrupalButton); //fireEvent simulates DOM events
-    if (apiKeySave !== null) {
-      expect(navigateTo).toHaveBeenCalledWith('/groupChat', { id: null });
-    } else {
-      expect(navigateTo).toHaveBeenCalledWith('/ApiKey', { id: null });
-    }
+    expect(getApiKey).toHaveBeenCalled();
+    expect(navigateTo).toHaveBeenCalledWith('/groupChat', { id: null });
+  });
+
+  it('Clicking group chat button without API Key should navigate to "/ApiKey"', () => {
+    getApiKey.mockReturnValue(null);
+    const chatGrupalButton = menu.querySelector('button[data-testid="grupal-chat"]');
+    fireEvent.click(chatGrupalButton);
+    expect(getApiKey).toHaveBeenCalled();
+    expect(navigateTo).toHaveBeenCalledWith('/ApiKey', { id: null });
   });
 });
