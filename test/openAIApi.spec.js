@@ -17,7 +17,7 @@ describe('communicateWithOpenAI function', () => {
 
     getApiKey.mockReturnValue(apiKey);
 
-    global.fetch = jest.fn(() => Promise.resolve({
+    window.fetch = jest.fn(() => Promise.resolve({
       json: () => Promise.resolve({
         choices: [{
           message: {
@@ -58,7 +58,7 @@ describe('communicateWithOpenAI function', () => {
 
     getApiKey.mockReturnValue(apiKey);
 
-    global.fetch = jest.fn(() => Promise.resolve({
+    window.fetch = jest.fn(() => Promise.resolve({
       json: () => Promise.resolve({
         choices: [{
           message: {
@@ -81,7 +81,7 @@ describe('communicateWithOpenAI function', () => {
 
     getApiKey.mockReturnValue(apiKey);
 
-    global.fetch = jest.fn(() => Promise.reject(error));
+    window.fetch = jest.fn(() => Promise.reject(error));
 
     await expect(communicateWithOpenAI(cruiseShips, userMessages)).rejects.toThrow(error);
   });
