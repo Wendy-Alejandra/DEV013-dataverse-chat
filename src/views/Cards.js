@@ -14,10 +14,13 @@ import {
 export const Cards = () => {
   document.title = "Cards";
   const section = document.createElement("section");
+  const blueContainer = document.createElement("div");
+  blueContainer.className = "background-blue";
   const div = document.createElement("div");
   div.appendChild(CardsRender(data));
 
-  section.append(Header(), Menu(), Statistics(), div, Footer());
+  blueContainer.append(Header(), Menu(), Statistics(), div);
+  section.append(blueContainer, Footer());
 
   const selectFilter = section.querySelector(
     'select[data-testid="select-filter"]'

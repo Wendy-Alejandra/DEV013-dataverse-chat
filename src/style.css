@@ -101,7 +101,6 @@ h2 {
 button:hover {
   background-color: var(--amarillo);
 }
-/* cards styles*/
 
 /* MoreInforCards*/
 .short-description {
@@ -274,9 +273,6 @@ input::placeholder {
   box-shadow: 0 0 1.25rem 0.5rem #c3c3c333;
   display: grid;
   align-content: end;
-  /* display: flex;
-  justify-content: center;
-  align-items: flex-end; */
 }
 
 .chat {
@@ -341,16 +337,11 @@ button[class="send-message"] {
   display: flex;
   flex-direction: row;
   padding: 0;
-  /*display: grid;
-  grid-template-columns: 50%, 50%;
-  grid-auto-flow: column;*/
-
 } 
 .contacts-style{
   display: flex;
   align-items: center;
   border-bottom: 1px solid #ddd;
-  /*border-bottom: 0.01rem var(--negro) solid;*/
 }
 .list{
   width: 388px;
@@ -430,7 +421,7 @@ button[class="send-message"] {
 }
 
 /* Codigo dataverse proyecto 2*/
-
+/* cards styles*/
 .container-section {
   background-color: var(--azul);
   border-radius: 1rem;
@@ -444,9 +435,10 @@ header {
 }
 
 #menu {
-  margin-left: 4rem;
-  margin-right: 4rem;
-  padding: 0.4rem;
+  /* margin-left: 4rem;
+  margin-right: 4rem; */
+  margin: 1rem;
+  padding: 0;
   background-color: var(--blanco);
   border: 2px solid var(--blanco);
   border-radius: 1rem;
@@ -454,6 +446,7 @@ header {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 }
 .open-menu {
   display: none;
@@ -473,19 +466,42 @@ select {
   outline: 0;
   background-color: var(--gris-claro);
   padding: 0.2rem;
-  margin-left: 0.3rem;
-  margin-right: 2rem;
+  /* margin-left: 0.3rem;
+  margin-right: 2rem; */
   border: 1px solid var(--gris-oscuro);
   border-radius: 0.3rem;
   font-family: var(--fuente);
   font-size: 1rem;
-  width: 10rem;
+  width: 8rem;
+  height: 3rem;
+  text-align: center;
 }
 select:hover {
   background-color: var(--amarillo);
 }
-button[data-testid="button-clear"],
 button[data-testid="statistics"] {
+  background-color: var(--gris-claro);
+  border: 1px solid var(--gris-oscuro);
+  border-radius: 0.3rem;
+  padding: 0.2rem;
+  /* margin-left: 2rem; */
+  font-family: var(--fuente);
+  font-size: 1rem;
+  font-weight: 600;
+  width: 4rem;
+  height: 3rem;
+  cursor: pointer;
+}
+button[data-testid="grupal-chat"] {
+  background-color: var(--gris-claro);
+  border: 1px solid var(--gris-oscuro);
+  border-radius: 0.3rem;
+  margin: 0;
+  padding: 0;
+  width: 5rem;
+  height: 3rem;
+}
+button[data-testid="button-clear"] {
   background-color: var(--gris-claro);
   border: 1px solid var(--gris-oscuro);
   border-radius: 0.3rem;
@@ -494,7 +510,8 @@ button[data-testid="statistics"] {
   font-family: var(--fuente);
   font-size: 1rem;
   font-weight: 600;
-  width: 10rem;
+  width: 8rem;
+  height: 3rem;
   cursor: pointer;
 }
 #text {
