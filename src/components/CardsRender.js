@@ -8,8 +8,8 @@ export const CardsRender = (data) => {
     html += `<li itemscope="" itemtype="name" class="cards">
       <img itemprop="image" src="${card.imageUrl}" alt="${card.name}">
       <dl itemprop="name">${card.name}</dl>
-      <dd itemprop="departureBoatTerminal"> Port: ${card.facts.departurePort}</dd>
-      <dd itemprop="totalPrice">${card.facts.cruisePrice}</dd>
+      <dd itemprop="departureBoatTerminal"> <strong>Port:</strong> ${card.facts.departurePort}</dd>
+      <dd itemprop="totalPrice">$${card.facts.cruisePrice}</dd>
       <dd itemprop="description">AVG PER PERSON</dd>
       <button class="see-more" data-id="${card.id}">See more</button>
   </li>`;

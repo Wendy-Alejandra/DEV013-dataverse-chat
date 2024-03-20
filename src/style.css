@@ -435,10 +435,8 @@ header {
 }
 
 #menu {
-  /* margin-left: 4rem;
-  margin-right: 4rem; */
-  margin: 1rem;
-  padding: 0;
+  margin: 1rem 4rem 1rem 4rem;
+  padding: 0.5rem 0 0.5rem 0;
   background-color: var(--blanco);
   border: 2px solid var(--blanco);
   border-radius: 1rem;
@@ -455,10 +453,9 @@ header {
   display: none;
 }
 label {
-  padding: 0.2rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  margin-right: 0.3rem;
+  margin-right: 0.5rem;
 }
 select {
   appearance: none;
@@ -466,15 +463,14 @@ select {
   outline: 0;
   background-color: var(--gris-claro);
   padding: 0.2rem;
-  /* margin-left: 0.3rem;
-  margin-right: 2rem; */
+  margin-right: 2rem; 
   border: 1px solid var(--gris-oscuro);
   border-radius: 0.3rem;
   font-family: var(--fuente);
-  font-size: 1rem;
-  width: 8rem;
+  font-size: 1.3rem;
+  width: 10rem;
   height: 3rem;
-  text-align: center;
+  
 }
 select:hover {
   background-color: var(--amarillo);
@@ -483,10 +479,10 @@ button[data-testid="statistics"] {
   background-color: var(--gris-claro);
   border: 1px solid var(--gris-oscuro);
   border-radius: 0.3rem;
-  padding: 0.2rem;
-  /* margin-left: 2rem; */
+  margin-right: 2rem; 
   font-family: var(--fuente);
-  font-size: 1rem;
+  font-size: 2rem;
+  color: var(--negro);
   font-weight: 600;
   width: 4rem;
   height: 3rem;
@@ -496,19 +492,23 @@ button[data-testid="grupal-chat"] {
   background-color: var(--gris-claro);
   border: 1px solid var(--gris-oscuro);
   border-radius: 0.3rem;
+  color: var(--negro);
   margin: 0;
   padding: 0;
   width: 5rem;
   height: 3rem;
+  margin-right: 2rem; 
+}
+.bi-people-fill{
+  font-size: 1.5rem;
 }
 button[data-testid="button-clear"] {
   background-color: var(--gris-claro);
   border: 1px solid var(--gris-oscuro);
   border-radius: 0.3rem;
-  padding: 0.2rem;
-  margin-left: 2rem;
+  margin-right: 2rem; 
   font-family: var(--fuente);
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: 600;
   width: 8rem;
   height: 3rem;
@@ -525,11 +525,9 @@ button[data-testid="button-clear"] {
 #text:hover {
   background-color: var(--amarillo);
 }
-button[data-testid="statistics"] {
-  margin: 1rem;
-}
 button[data-testid="button-clear"]:hover,
-button[data-testid="statistics"]:hover {
+button[data-testid="statistics"]:hover,
+button[data-testid="grupal-chat"]:hover {
   background-color: var(--amarillo);
 }
 ul {
@@ -548,6 +546,7 @@ ul {
   padding: 1rem;
   background-color: var(--blanco);
   border-radius: 1rem;
+  text-align: center;
 }
 img {
   width: 320px;
@@ -568,20 +567,29 @@ dd {
   list-style-type: none;
 }
 dd[itemprop="totalPrice"] {
-  font-size: 1.4rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  background-color: var(--naranja);
-  border-radius: 0.5rem;
-  padding: 0.2rem;
-  margin: 0.3rem 4.4rem;
+  font-style: italic;
+  margin-top: 0.2rem;
 }
-dd[itemprop="totalPrice"]:hover {
-  background-color: var(--amarillo);
-}
+dd[itemprop="description"]{
+  margin: 0;
+  font-style: italic;
+} 
 dd[itemprop="departureBoatTerminal"] {
   font-size: 1.2rem;
   font-style: italic;
   margin-top: 0;
+}
+.see-more{
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 700;
+  padding: 0.3rem 1.2rem 0.3rem 1.2rem;
+  margin-top: 0.2rem;
+  background-color: var(--naranja);
+  border: 1px solid var(--gris-oscuro);
+  border-radius: 1rem;
 }
 footer {
   text-align: center;

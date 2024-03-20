@@ -24,7 +24,7 @@ export const Menu = () => {
             <option value="high">High to Low</option>
         </select>
     <button data-testid="statistics"><i class="bi bi-graph-up-arrow"></i></button>
-    <button data-testid="grupal-chat"><i class="bi bi-people-fill"></i><p>ChatGrupal</p></button>
+    <button data-testid="grupal-chat"><i class="bi bi-people-fill"></i><p>GroupChat</p></button>
     <button data-testid="button-clear">Clear</button>
     `;
 
