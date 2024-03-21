@@ -18,8 +18,15 @@ export const Cards = () => {
   blueContainer.className = "background-blue";
   const div = document.createElement("div");
   div.appendChild(CardsRender(data));
+  const headerCards = document.createElement("div");
+  headerCards.setAttribute("class", "headerCards");
+  const buttonCardsHamburguer = document.createElement("div");
+  buttonCardsHamburguer.innerHTML= `
+  <button class="open-menu"><i class="bi bi-list"></i></button>
+  `;
+  headerCards.append(Header(), buttonCardsHamburguer);
 
-  blueContainer.append(Header(), Menu(), Statistics(), div);
+  blueContainer.append(headerCards, Menu(), Statistics(), div);
   section.append(blueContainer, Footer());
 
   const selectFilter = section.querySelector(
@@ -110,6 +117,17 @@ export const Cards = () => {
 
   /* opening-closing hamburguer menu for screen devices <600px (abriendo-cerrando el menu hamburguesa para
   dispositivos con pantallas <600px)*/
+  const navMenu = blueContainer.querySelector("#menu");
+  const openHamburguerMenu = blueContainer.querySelector(".open-menu");
+  const closeHamburguer = blueContainer.querySelector(".close-menu");
+
+  openHamburguerMenu.addEventListener("click", () => {
+    navMenu.classList.add("visible");
+  });
+
+  closeHamburguer.addEventListener("click", () => {
+    navMenu.classList.remove("visible");
+  });
 
   return section;
 };

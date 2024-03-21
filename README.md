@@ -174,32 +174,51 @@ diseñando tu propia interfaz.
 
 ## 5. Estructura del proyecto
 
-La lógica del proyecto debe estar implementada completamente en JavaScript
-(ES6), HTML y CSS. En este proyecto NO está permitido usar librerías o
-frameworks, solo [vanilla JavaScript](https://medium.com/laboratoria-how-to/vanillajs-vs-jquery-31e623bbd46e).
-
-El _boilerplate_ que viene con el proyecto es una estructura inicial. Ustedes
-deben ir agregando más archivos conforme vayan avanzando en su proyecto.
-La siguiente es una estructura de archivos que recomendamos:
+La lógica del proyecto debe se implementó completamente en JavaScript
+(ES6), HTML y CSS. 
+El _boilerplate_ que del proyecto es el siguiente:
 
 ```text
 .
 ├── src
 |  ├── components
+|  |  └── CardsRender.js
+|  |  └── Footer.js
+|  |  └── Header.js
+|  |  └── Menu.js
+|  |  └── Statistics.js
 |  ├── data
 |  |  └── dataset.js
 |  ├── lib
+|  |  └── apiStorage.js
 |  |  └── dataFunctions.js
+|  |  └── openAIApi.js
 |  ├── views
+|  |  └── adventurOfTheSeasAruba.jpeg
+|  |  └── ApiKey.js
+|  |  └── Cards.js
+|  |  └── Error.js
+|  |  └── GroupChat.js
+|  |  └── Home.js
+|  |  └── IndividualChat.js
+|  |  └── MoreInfoCards.js
+|  ├── error.png
+|  ├── favicon.png
+|  ├── fondo_cruceros.jpg
 |  ├── index.html
 |  ├── index.js
 |  ├── router.js
 |  └── style.css
 ├── test
+|  └── apiKey.spec.js
+|  └── cardsRender.spec.js
+|  └── data.js
 |  └── dataFunctions.spec.js
-|  └── example.spec.js
-|  └── dataFunctions.spec.js
-|  └── example.spec.js
+|  └── footer.spec.js
+|  └── header.spec.js
+|  └── menu.spec.js
+|  └── openAIApi.spec.js
+|  └── statistics.spec.js
 ├── README.md
 └── package.json
 
@@ -208,13 +227,17 @@ La siguiente es una estructura de archivos que recomendamos:
 
 ## 5. Criterios de aceptación mínimos del proyecto
 
-Para realizar el presente proyecto, definimos 3 historias de usuario, diseñamos la interfaz de usuaria mediante el uso de sketches y protoipos de alta fidelidad
+Para realizar el presente proyecto, definimos 3 historias de usuario, diseñamos la interfaz de usuaria mediante el uso de sketches o prototipos de baja fidelidad y prototipos de alta fidelidad en [Figma](https://www.figma.com/file/V5doEKg8V9PpNrpNUzrGH3/Prototipos-HU1?type=design&node-id=0-1&mode=design&t=oiz0EfUpai0hLcqp-0) para cada una de las vistas de nuestra SPA.
 
 ### Definición del producto
 
 Documenta brevemente tu trabajo en el archivo `README.md` de tu repositorio,
 contándonos cómo fue tu proceso de diseño y cómo crees que el producto resuelve
 el problema (o problemas) que tiene tu usuaria.
+En este proyecto se **construyó una SPA (Single Page Application) en donde se visualiza un  _conjunto (set) de datos_ de cruceros** generados con la herramienta de Inteligencia Articial [ChatGPT](https://openai.com/chatgpt).
+Además, 
+
+
 
 ### Historias de usuaria
 
