@@ -421,9 +421,6 @@ button[class="send-message"] {
 }
 .img-error {
   border-radius: 1rem;
-  /* object-fit: cover; */
-  /* width: 100%;
-  height: 100%; */
   width: 30rem;
   height: 30rem;
 }
@@ -461,7 +458,7 @@ header {
   display: none;
 }
 label {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 700;
   margin-right: 0.5rem;
 }
@@ -475,7 +472,7 @@ select {
   border: 1px solid var(--gris-oscuro);
   border-radius: 0.3rem;
   font-family: var(--fuente);
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   width: 10rem;
   height: 3rem;
   
@@ -520,7 +517,7 @@ button[data-testid="button-clear"] {
   border-radius: 0.3rem;
   margin-right: 2rem; 
   font-family: var(--fuente);
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 600;
   width: 8rem;
   height: 3rem;
@@ -785,6 +782,59 @@ footer {
   }
   footer {
     font-size: 1rem;
+  }
+  /* Cards */
+  #menu {
+    width: 15rem;
+  }
+  label {
+    font-size: 1rem;
+  }
+  select {
+    width: 10rem;
+    font-size: 1rem;
+  }
+  select:hover {
+    background-color: var(--amarillo);
+  }
+  .close-menu {
+    font-size: 1.2rem;
+    margin-right: 1rem;
+  }
+  button[data-testid="statistics"] {
+    font-size: 1.5rem;
+    width: 3rem;
+  }
+  button[data-testid="grupal-chat"] {
+    width: 5rem;
+    height: 3rem;
+  }
+  .bi-people-fill{
+    font-size: 1.5rem;
+  }
+  button[data-testid="button-clear"] {
+    font-size: 1.2rem;
+  }
+  img {
+    width: 200px;
+    height: 200px;
+    border-radius: 0.5rem;
+  }
+  dl {
+    font-size: 1rem;
+  }
+  dd[itemprop="totalPrice"] {
+    font-size: 1.5rem;
+  }
+  dd[itemprop="description"]{
+    font-size: 0.8rem;
+  } 
+  dd[itemprop="departureBoatTerminal"] {
+    font-size: 1rem;
+  }
+  .see-more{
+    font-size: 1.2rem;
+    border-radius: 0.8rem;
   }
   /*MORE INFO CARDS*/
   h1 {
