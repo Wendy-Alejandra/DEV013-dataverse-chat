@@ -118,8 +118,9 @@ button:hover {
   align-items: center;
 }
 .close{
-  font-size: 1.2rem;
-  padding: 0.2rem;
+  font-size: 1.5rem;
+  padding: 0;
+  margin: 0;
   border-radius: 0.2rem;
   font-weight: 600;
 }
@@ -239,7 +240,7 @@ input::placeholder {
 /* IndividualChat style*/
 .title-chat {
   display: grid;
-  grid-template-columns: 5% 85% 10%;
+  grid-template-columns: 8% 79% 13%;
   justify-items: start;
   align-items: center;
 }
@@ -265,13 +266,20 @@ input::placeholder {
 }
 .apiKey-symbol-chat{
   border: none;
-  padding: 0;
+  padding: 0 0.5rem;
   margin: 0;
   font-size: 3rem;
   color: var(--azul);
   background: none;
-
 }
+.apiKey-symbol-chat:hover {
+  background-color: initial;
+}
+/* .close-chat {
+  padding: 0;
+  font-size: 2rem;
+} */
+
 .chat-background {
   background-color: var(--gris-claro);
   margin: auto;
@@ -339,6 +347,9 @@ button[class="send-message"] {
   color: var(--negro);
   transform: rotate(45deg);
   padding-right: 1rem;
+}
+button[class="send-message"]:hover {
+  color: var(--azul);
 }
 /* Group chat styles*/
 .group {
@@ -609,6 +620,30 @@ footer {
 }
 
 /*CSS Responsive*/
+@media screen and (max-width: 1000px) {
+    /* IndividualChat style*/
+    .title-chat {
+      display: grid;
+      grid-template-columns: 20% 60% 20%;
+      justify-items: start;
+      align-items: center;
+    }
+    .chat-header{
+      font-size: 1.2rem;
+    }
+    .apiKey-symbol-chat{
+      font-size: 1.7rem;
+    }
+    p {
+      font-size: 0.8rem;
+    }
+    textarea[placeholder="Write a new message"] {
+      font-size: 1.2rem;
+    }
+    button[class="send-message"] {
+      font-size: 1.5rem;
+    }
+}
 
 @media screen and (max-width: 600px) {
   /*Home*/
@@ -734,8 +769,6 @@ footer {
     background-color: var(--naranja);
     display: flex;
     flex-direction: column;
-    /* justify-content: flex-end;
-    align-items: end; */
     justify-content: center;
     align-items: center;
     padding: 2rem;
@@ -770,7 +803,30 @@ footer {
     background-color: var(--naranja);
     text-align: center;
   }
+  /* IndividualChat style*/
+  .title-chat {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    justify-items: start;
+    align-items: center;
+  }
+  .chat-header{
+    font-size: 1.2rem;
+  }
+  .apiKey-symbol-chat{
+    font-size: 2rem;
+  }
+  p {
+    font-size: 0.8rem;
+  }
+  textarea[placeholder="Write a new message"] {
+    font-size: 1.2rem;
+  }
+  button[class="send-message"] {
+    font-size: 2rem;
+  }
 }
+
 @media screen and (max-width:400px){
   /*Home*/
   .img-home, .image-more-infor {
@@ -854,5 +910,29 @@ footer {
   .bi-chat-text{
     font-size: 0.9rem;
   }
+
+  /* Individual chat */
+  .title-chat {
+    display: grid;
+    grid-template-columns: 25% 40% 25%;
+    justify-items: start;
+    align-items: center;
+  }
+  .chat-header{
+    font-size: 0.8rem;
+  }
+  .apiKey-symbol-chat{
+    font-size: 1.7rem;
+  }
+  p {
+    font-size: 0.8rem;
+  }
+  textarea[placeholder="Write a new message"] {
+    font-size: 1rem;
+  }
+  button[class="send-message"] {
+    font-size: 1.7rem;
+  }
 }
+
 
