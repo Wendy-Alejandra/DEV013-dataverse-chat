@@ -656,6 +656,34 @@ footer {
   .infor-price{
     margin: 0 3rem 0 3rem;
   }
+  /*API KEY*/
+  .section-1{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  input[type="text"] {
+    border-radius: 0.5rem;
+  }
+  input::placeholder {
+    font-size: 1rem;
+  }
+  .button-key {
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    margin: 0 5rem 0 5rem;
+    padding: 0.5rem;
+  }
+  .apiKey-symbol{
+    font-size: 3rem;
+  }
+  .section-3 {
+    margin: 2.5rem 0;
+    font-size: 1rem;
+  }
+  .incorrect-api{
+    font-size: 1rem;
+  }
 
   /*Cards Proyecto 2*/
   
