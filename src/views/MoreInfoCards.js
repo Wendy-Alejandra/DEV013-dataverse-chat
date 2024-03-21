@@ -21,7 +21,7 @@ export const MoreInfoCards = ({ id: cardId }) => {
     <p class="short-description">${cruise.shortDescription}</p>
     <article class="article-infor">
         <figure>
-            <img itemprop="image" src="${cruise.imageUrl}" alt="${cruise.name}">
+            <img class="image-more-infor" itemprop="image" src="${cruise.imageUrl}" alt="${cruise.name}">
         </figure>
         <section class="section-price">
             <p class="p-infor"> <strong> Departure Port:</strong>  ${cruise.facts.departurePort}</p>
