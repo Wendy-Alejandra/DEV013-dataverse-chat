@@ -56,6 +56,10 @@ export const IndividualChat = ({ id: cardId }) => {
   const sendMessageButton = whiteContainer.querySelector(".bi-send");
   const userInput = whiteContainer.querySelector(".text-input");
   const chatWindow = whiteContainer.querySelector(".body-chat");
+  //Scroll
+  function scrollToBottom(){
+    chatWindow.scrollTop = chatWindow.scrollHeight - chatWindow.clientHeight;
+  }
   
 
   const sendMessage = async () => {
@@ -79,13 +83,14 @@ export const IndividualChat = ({ id: cardId }) => {
       chatAPI.innerHTML=`${chatAPIResponse}`;
     }
     chatWindow.append(userContainer, chatAPI);
-
+    scrollToBottom()
   };
 
   sendMessageButton.addEventListener("click", sendMessage);
   userInput.addEventListener("keyup", (event)=>{
     if(event.key === "Enter" && userInput.value !==""){
       sendMessage();
+      ;
     }
   })
 

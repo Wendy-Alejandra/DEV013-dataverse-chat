@@ -75,6 +75,11 @@ export const GroupChat = () => {
   const userInput = whiteContainer.querySelector(".text-input");
   const chatWindow = whiteContainer.querySelector(".body-chat");
 
+   //Scroll
+   function scrollToBottom(){
+    chatWindow.scrollTop = chatWindow.scrollHeight - chatWindow.clientHeight;
+  }
+
   sendMessageButton.addEventListener("click", () => {
     /* User message container */
     const userInputValue = userInput.value;
@@ -88,16 +93,15 @@ export const GroupChat = () => {
     data.forEach(async (element) => {
       const chatAPI = document.createElement("div");
       chatAPI.className = "textBubble chatAPI";
-      const chatAPIResponse = await communicateWithOpenAI(
-        element.description,
-        userInputValue
-      );
+      const chatAPIResponse = await communicateWithOpenAI(element.description, userInputValue);
 
       chatAPI.innerHTML = `<h2>${element.name}</h2>
       <p>${chatAPIResponse}</p>
       `;
       chatWindow.append(chatAPI);
+      scrollToBottom();
     });
+    
   });
 
   //Para el responsive
@@ -110,6 +114,7 @@ export const GroupChat = () => {
   closeContacts.addEventListener("click", ()=>{
     blockContacts.classList.remove("visible");
   })
+
   // userInput.addEventListener("keyup", (event) => {
   //   if (event.key === "Enter" && userInput.value !== "") {
   //     sendMessage();
