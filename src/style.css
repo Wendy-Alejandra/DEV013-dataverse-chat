@@ -434,33 +434,44 @@ button[class="send-message"]:hover {
 }
 /* Error view */
 .title-error {
-  display: flex;
   font-size: 5rem;
   color: var(--azul);
-  justify-content: center;
-  padding: 2rem;
+  text-align: center;
+  padding: 0;
 }
 .error-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-content: center;
   text-align: center;
 }
 .dont-drown {
+  margin: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  margin: 5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
 }
 .text-error {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 .img-error {
-  border-radius: 1rem;
-  width: 30rem;
-  height: 30rem;
+  width: 21rem;
+  height: 21rem;
 }
+.button-get-your-cruise {
+  padding: 0.6rem 2.5rem;
+  border: 1px solid var(--gris-oscuro);
+  background-color: var(--naranja);
+  margin: 1rem 10rem;
+  border-radius: 1.2rem;
+  font-size: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 /* Codigo dataverse proyecto 2*/
 /* cards styles*/
 .container-section {
@@ -645,60 +656,76 @@ footer {
 
 /*CSS Responsive*/
 @media screen and (max-width: 1000px) {
-    /* IndividualChat style*/
-    .title-chat {
-      display: grid;
-      grid-template-columns: 15% 70% 15%;
-      align-items: center;
-    }
-    .chat-header{
-      font-size: 1.5rem;
-    }
-    .container-buttons {
-      display: flex;
-      flex-direction: row;
-      justify-content: end;
-      margin-right: 1rem;
-    }
-    .apiKey-symbol-chat{
-      font-size: 2rem;
-    }
-    .close-chat{
-      font-size: 1.2rem;
-    }
-    .online {
-      font-size: 0.8rem;
-    }
-    textarea[placeholder="Write a new message"] {
-      font-size: 1.2rem;
-    }
-    button[class="send-message"] {
-      font-size: 1.5rem;
-    }
-      /*GROUP CHAT*/
-    .open-contacts{
-      display: block;
-    }
-    .container-contacts{
-      visibility: hidden;
-      background-color: var(--blanco);
-    }
-    .container-contacts.visible{
-      visibility: visible;
-    }
-    .close-contacts{
-      display: block;
-    }
-    .container-contacts{
-      position: absolute;
-    }
-    .infor-title-group{
-      display: grid;
-      grid-template-columns: 80% 20%;
-    }
-    .group-chat-title{
-      display: flex;
-    }
+  /* IndividualChat style*/
+  .title-chat {
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+    align-items: center;
+  }
+  .chat-header{
+    font-size: 1.5rem;
+  }
+  .container-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-right: 1rem;
+  }
+  .apiKey-symbol-chat{
+    font-size: 2rem;
+  }
+  .close-chat{
+    font-size: 1.2rem;
+  }
+  .online {
+    font-size: 0.8rem;
+  }
+  textarea[placeholder="Write a new message"] {
+    font-size: 1.2rem;
+  }
+  button[class="send-message"] {
+    font-size: 1.5rem;
+  }
+    /*GROUP CHAT*/
+  .open-contacts{
+    display: block;
+  }
+  .container-contacts{
+    visibility: hidden;
+    background-color: var(--blanco);
+  }
+  .container-contacts.visible{
+    visibility: visible;
+  }
+  .close-contacts{
+    display: block;
+  }
+  .container-contacts{
+    position: absolute;
+  }
+  .infor-title-group{
+    display: grid;
+    grid-template-columns: 80% 20%;
+  }
+  .group-chat-title{
+    display: flex;
+  }
+  /* Error view */
+  .title-error {
+    font-size: 3rem;
+  }
+  .img-error {
+    width: 15rem;
+    height: 15rem;
+  }
+  .text-error {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+  .button-get-your-cruise {
+    margin: 1rem 3rem;
+    font-size: 1.2rem;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -888,6 +915,24 @@ footer {
   button[class="send-message"] {
     font-size: 2rem;
   }
+  /* Error view */
+  .error-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  .title-error {
+    font-size: 3rem;
+  }
+  .text-error {
+    font-size: 1.2rem;
+  }
+  .button-get-your-cruise {
+    font-size: 1rem;
+  }
 }
 
 @media screen and (max-width:400px){
@@ -998,6 +1043,37 @@ footer {
   }
   button[class="send-message"] {
     font-size: 1.7rem;
+  }
+  /* Error view */
+  .background-white {
+    display: flex;
+    flex-direction: column;
+  }
+  .title-error {
+    font-size: 2rem;
+  }
+  .error-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  .dont-drown {
+    margin-right: 1rem;
+  }
+  .img-error {
+    width: 10rem;
+    height: 10rem;
+  }
+  .text-error {
+    margin: 0;
+    font-size: 1rem;
+  }
+  .button-get-your-cruise {
+    margin: 1.5rem 2.5rem;
+    font-size: 0.9rem;
   }
 }
 
