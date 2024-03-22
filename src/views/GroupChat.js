@@ -13,8 +13,12 @@ export const GroupChat = () => {
   containerContacts.className = "container-contacts";
   const list = document.createElement("div");
   list.className = "list";
-  const titleContacts = document.createElement("h2");
-  titleContacts.textContent = "Contacts";
+  const titleContacts = document.createElement("div");
+  titleContacts.className = "title-contacts";
+  titleContacts.innerHTML = `
+    <h2 class="title-contacts-group">Contacts</h2>
+    <button class="close-contacts"><i class="bi bi-x-lg"></i></button>
+  `;
   let contacts = "";
   data.forEach((card) => {
     contacts += `
@@ -36,10 +40,11 @@ export const GroupChat = () => {
   whiteContainerSecondPart.className = "chat-group-text";
   whiteContainerSecondPart.innerHTML = `
     <header class="infor-title-group">
-      <h2 class="group-chat-title">Group Chat</h2>
-      <div class="container-buttons">
+      
+      <h2 class="group-chat-title"><button class="open-contacts"><i class="bi bi-people-fill"></i></button>Group Chat</h2>
+      <div class="container-buttons-group">
         <button class="apiKey-symbol-chat"><i class="bi bi-key-fill"></i></button>
-        <button class="close"><i class="bi bi-x-lg"></i></button>
+        <button class="close close-groupchat"><i class="bi bi-x-lg"></i></button>
       </div>
     </header>
     <article class="chat-background group-background">
@@ -94,6 +99,17 @@ export const GroupChat = () => {
       chatWindow.append(chatAPI);
     });
   });
+
+  //Para el responsive
+  const blockContacts = whiteContainer.querySelector(".container-contacts");
+  const closeContacts= whiteContainer.querySelector(".close-contacts");
+  const openContacts = whiteContainer.querySelector(".open-contacts");
+  openContacts.addEventListener("click", ()=>{
+    blockContacts.classList.add("visible");
+  })
+  closeContacts.addEventListener("click", ()=>{
+    blockContacts.classList.remove("visible");
+  })
   // userInput.addEventListener("keyup", (event) => {
   //   if (event.key === "Enter" && userInput.value !== "") {
   //     sendMessage();
