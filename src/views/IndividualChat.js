@@ -20,11 +20,11 @@ export const IndividualChat = ({ id: cardId }) => {
         </figure>
         <div class="header-chat">
             <h2 class="chat-header">${cruises.name}</h2>
-            <p><i class="bi bi-circle-fill"></i>Online</p>
+            <p class="online"><i class="bi bi-circle-fill"></i>Online</p>
         </div>
         <div class="container-buttons">
           <button class="apiKey-symbol-chat"><i class="bi bi-key-fill"></i></button>
-          <button class="close"><i class="bi bi-x-lg"></i></button>
+          <button class="close close-chat"><i class="bi bi-x-lg"></i></button>
         </div>
 
     </header>

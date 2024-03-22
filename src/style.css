@@ -240,8 +240,7 @@ input::placeholder {
 /* IndividualChat style*/
 .title-chat {
   display: grid;
-  grid-template-columns: 8% 79% 13%;
-  justify-items: start;
+  grid-template-columns: 8% 80% 12%;
   align-items: center;
 }
 .chat-header{
@@ -263,6 +262,9 @@ input::placeholder {
 }
 .container-buttons {
   display: flex;
+  flex-direction: row;
+  justify-content: end;
+  margin-right: 1rem;
 }
 .apiKey-symbol-chat{
   border: none;
@@ -275,10 +277,6 @@ input::placeholder {
 .apiKey-symbol-chat:hover {
   background-color: initial;
 }
-/* .close-chat {
-  padding: 0;
-  font-size: 2rem;
-} */
 
 .chat-background {
   background-color: var(--gris-claro);
@@ -624,17 +622,25 @@ footer {
     /* IndividualChat style*/
     .title-chat {
       display: grid;
-      grid-template-columns: 20% 60% 20%;
-      justify-items: start;
+      grid-template-columns: 15% 70% 15%;
       align-items: center;
     }
     .chat-header{
-      font-size: 1.2rem;
+      font-size: 1.5rem;
+    }
+    .container-buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
+      margin-right: 1rem;
     }
     .apiKey-symbol-chat{
-      font-size: 1.7rem;
+      font-size: 2rem;
     }
-    p {
+    .close-chat{
+      font-size: 1.2rem;
+    }
+    .online {
       font-size: 0.8rem;
     }
     textarea[placeholder="Write a new message"] {
@@ -806,17 +812,24 @@ footer {
   /* IndividualChat style*/
   .title-chat {
     display: grid;
-    grid-template-columns: 20% 60% 20%;
-    justify-items: start;
+    grid-template-columns: 15% 70% 15%;
     align-items: center;
+  }
+  .imag-chat {
+    height: 2.9rem;
+    width: 2.9rem;
   }
   .chat-header{
     font-size: 1.2rem;
   }
+  .bi-circle-fill {
+    font-size: 0.5rem;
+    margin-right: 0.2rem;
+  }
   .apiKey-symbol-chat{
     font-size: 2rem;
   }
-  p {
+  .online {
     font-size: 0.8rem;
   }
   textarea[placeholder="Write a new message"] {
@@ -914,18 +927,21 @@ footer {
   /* Individual chat */
   .title-chat {
     display: grid;
-    grid-template-columns: 25% 40% 25%;
-    justify-items: start;
+    grid-template-columns: 25% 50% 25%;
     align-items: center;
+  }
+  .imag-chat {
+    height: 2.5rem;
+    width: 2.5rem;
   }
   .chat-header{
     font-size: 0.8rem;
   }
   .apiKey-symbol-chat{
-    font-size: 1.7rem;
+    font-size: 1.3rem;
   }
-  p {
-    font-size: 0.8rem;
+  .online {
+    font-size: 0.7rem;
   }
   textarea[placeholder="Write a new message"] {
     font-size: 1rem;
