@@ -22,9 +22,9 @@ export const IndividualChat = ({ id: cardId }) => {
             <h2 class="chat-header">${cruises.name}</h2>
             <p class="online"><i class="bi bi-circle-fill"></i>Online</p>
         </div>
-        <div class="container-buttons">
+        <div class="container-buttons individual-buttons">
           <button class="apiKey-symbol-chat"><i class="bi bi-key-fill"></i></button>
-          <button class="close close-chat"><i class="bi bi-x-lg"></i></button>
+          <button class="close close-chat close-groupchat"><i class="bi bi-x-lg"></i></button>
         </div>
 
     </header>

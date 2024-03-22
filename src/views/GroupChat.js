@@ -26,7 +26,7 @@ export const GroupChat = () => {
       <img class="imag-chat-group" src="${card.imageUrl}" alt="${card.name}">
       <div class= "header-chat-group">
         <h3 class= "name-cruise">${card.name}</h3>
-        <p><i class="bi bi-circle-fill"></i>Online</p>
+        <p class="online-group"><i class="bi bi-circle-fill"></i>Online</p>
       </div>
     </section>
     `;
@@ -41,7 +41,7 @@ export const GroupChat = () => {
   whiteContainerSecondPart.innerHTML = `
     <header class="infor-title-group">
       
-      <h2 class="group-chat-title"><button class="open-contacts"><i class="bi bi-people-fill"></i></button>Group Chat</h2>
+      <h2 class="group-chat-title"><button class="open-contacts"><i class="bi bi-people-fill symbol-contacts"></i></button>Group Chat</h2>
       <div class="container-buttons-group">
         <button class="apiKey-symbol-chat"><i class="bi bi-key-fill"></i></button>
         <button class="close close-groupchat"><i class="bi bi-x-lg"></i></button>
