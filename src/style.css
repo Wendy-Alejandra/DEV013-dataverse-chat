@@ -260,10 +260,11 @@ input::placeholder {
   font-size: 0.7rem;
   margin-right: 0.2rem;
 }
-.container-buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: end;
+.individual-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
   margin-right: 1rem;
 }
 .apiKey-symbol-chat{
@@ -399,18 +400,18 @@ button[class="send-message"]:hover {
 .infor-title-group {
   height: 59px;
   display: grid;
-  grid-template-columns: 85% 15%;
+  grid-template-columns: 80% 20%;
   align-items: center;
   /*justify-items: left;
   align-items: center;*/
-
 }
 .container-buttons-group {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  justify-items: center;
-  align-items: center;
-  margin-right: 3rem;
+  /* justify-items: center;
+  justify-content: end;*/
+  align-items: center; 
+  margin-right: 2rem;
 }
 .close-groupchat{
   padding: 0;
@@ -672,7 +673,7 @@ footer {
     margin-right: 1rem;
   }
   .apiKey-symbol-chat{
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   .close-chat{
     font-size: 1.2rem;
@@ -686,19 +687,32 @@ footer {
   button[class="send-message"] {
     font-size: 1.5rem;
   }
-    /*GROUP CHAT*/
+  /*GROUP CHAT*/
+  .container-contacts {
+    border-radius: 1rem 0 0 1rem;
+    visibility: hidden;
+    background-color: #C2DDEB;
+  }
+  .group-background {
+  border-radius: 0 0 1rem 1rem;
+  }
   .open-contacts{
     display: block;
   }
-  .container-contacts{
-    visibility: hidden;
-    background-color: var(--blanco);
+  .title-contacts {
+    display: flex;
+    justify-content: space-around;
   }
   .container-contacts.visible{
     visibility: visible;
   }
+  .contacts-style, .title-contacts {
+    border-bottom: 1px solid #333;
+  }
   .close-contacts{
     display: block;
+    font-size: 1.5rem;
+    width: 2rem;
   }
   .container-contacts{
     position: absolute;
@@ -709,6 +723,12 @@ footer {
   }
   .group-chat-title{
     display: flex;
+  }
+  .close-groupchat{
+    padding: 0;
+    font-size: 1.5rem;
+    height: 2rem;
+    width: 2rem;
   }
   /* Error view */
   .title-error {
@@ -915,6 +935,31 @@ footer {
   button[class="send-message"] {
     font-size: 2rem;
   }
+  /* GROUP CHAT*/
+  .infor-title-group{
+    display: grid;
+    grid-template-columns: 75% 25%;
+  }
+  .list{
+    width: 250px;
+    height: 500px;
+  }
+  .imag-chat-group {
+    border-radius: 50%;
+    height: 2.5rem;
+    width: 2.5rem;
+    margin: 0.5rem;
+  }
+  .name-cruise {
+    font-size: 1rem;
+  }
+  .close-groupchat{
+    padding: 0;
+    font-size: 1.3rem;
+    height: 1.8rem;
+    width: 1.8rem;
+  }
+
   /* Error view */
   .error-container {
     display: flex;
@@ -1033,7 +1078,7 @@ footer {
     font-size: 0.8rem;
   }
   .apiKey-symbol-chat{
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
   .online {
     font-size: 0.7rem;
@@ -1043,6 +1088,39 @@ footer {
   }
   button[class="send-message"] {
     font-size: 1.7rem;
+  }
+  /* GROUP CHAT*/
+  .infor-title-group {
+    height: 59px;
+    display: grid;
+    grid-template-columns: 65% 45%;
+    align-items: center;
+  }
+  .open-contacts {
+    margin-right: 0.5rem;
+  }
+  .symbol-contacts{
+    font-size: 1rem;
+  }
+  .list{
+    width: 250px;
+    height: 500px;
+  }
+  .imag-chat-group {
+    height: 2.2rem;
+    width: 2.2rem;
+  }
+  .name-cruise {
+    font-size: 0.9rem;
+  }
+  .online-group {
+    font-size: 0.7rem;
+  }
+  .close-groupchat, .close-contacts {
+    padding: 0;
+    font-size: 1rem;
+    height: 1.5rem;
+    width: 1.5rem;
   }
   /* Error view */
   .background-white {
