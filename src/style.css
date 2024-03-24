@@ -1,300 +1,1158 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
-* {  
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family:var(--fuente);        
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--fuente);
 }
-:root{
-    --blanco: #ffffff;
-    --blanco-opaco: rgba(255, 255, 255, 0.7);
-    --gris-claro: #D6D9DC;
-    --gris-oscuro: #A4A6A9;
-    --azul: #3fa2cc;
-    --negro: #333333;
-    --naranja: #D9AB37;
-    --amarillo: #e2dd82;
-    --fuente: 'Inter', sans-serif;
-    --style: italic;
+:root {
+  --blanco: #ffffff;
+  --blanco-opaco: rgba(255, 255, 255, 0.8);
+  --gris-claro: #d6d9dc;
+  --gris-oscuro: #a4a6a9;
+  --azul: #3fa2cc;
+  --azul-oscuro: #267d95;
+  --negro: #333333;
+  --naranja: #d9ab37;
+  --amarillo: #e2dd82;
+  --rojo: #f61836;
+  --verde: #7fff00;
+  --verde-oscuro: #1C5567;
+  --verde-claro: #8DB7C3;
+  --fuente: "Inter", sans-serif;
+  --style: italic;
 }
 
-body{
-    background: url(fondo_cruceros.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+body {
+  background: url(fondo_cruceros.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
- /* Style home*/
- .contenedor-home{
-    background-color: var(--blanco-opaco);
-    margin: 3.75rem;
-    border-radius: 1rem;
-    padding: 1rem;
- }
- .title-home{
-    color: var(--negro);
-    font-size: 3rem;
-    font-style: var(--style);
-    font-weight: bolder;
-    text-align: center;
-    padding-top: 2rem ;    
- }
- .home-section{
-    display: flex;
-    align-items: center;
-    justify-content: center;
- }
- .img-home{
-    margin: 2rem 3rem;
-    width: 320px;
-    height: 320px;
-    border-radius: 0.5rem;
-    cursor: pointer;
- }
- .text-button{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
- }
- .text-home{
-    font-size: 2rem;
-    text-align: center;
-    font-style: var(--style);
-    font-weight: 400;
-    color: var(--negro);
-
- }
- .go{
-    font-size: 1.5rem;   
- }
-
- /* Codigo dataverse proyecto 2*/
-    
-.container-section{
-    background-color: var(--azul);
-    border-radius: 1rem;
-    margin: 3.75rem;
-    padding-top: 1rem;
-    text-align: center;
-    list-style-type: none;
+/* Blue and white containers styles 
+(Estilos para los contenedores blanco y azul)*/
+.background-blue {
+  background-color: var(--azul);
+  margin: 3rem 3rem 1.5rem 3rem;
+  padding: 1rem;
+  border-radius: 1rem;
 }
-header{
-    text-align: center;
+.background-white {
+  background: var(--blanco);
+  margin: 1.5rem 0 1rem 0;
+  padding: 1rem;
+  border-radius: 1rem;
 }
-h1{
-    color: var(--blanco);
-    font-size: 2rem;
+/*Styles headers*/
+h1 {
+  color: var(--blanco);
+  font-size: 3rem;
 }
 h2 {
-    margin: 0.8rem;
-    font-style: italic;
+  font-size: 2rem;
+  font-style: italic;
 }
-#menu{
-    margin-left: 4rem;
-    margin-right: 4rem;
-    padding: 0.4rem;
-    background-color: var(--blanco);
-    border: 2px solid var(--blanco);
-    border-radius: 1rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+/* Style home*/
+.title-home {
+  color: var(--negro);
+  font-size: 3rem;
+  font-style: var(--style);
+  font-weight: bolder;
+  text-align: center;
+  padding-top: 2rem;
+}
+.main-home {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.img-home {
+  width: 27rem;
+  height: 27rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.article-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+}
+.text-home {
+  font-size: 2rem;
+  text-align: center;
+  font-style: var(--style);
+  font-weight: 400;
+  color: var(--negro);
+}
+.button-go {
+  margin: 1.5rem;
+  padding: 0.6rem 2.5rem;
+  border: 1px solid var(--gris-oscuro);
+  background-color: var(--naranja);
+  border-radius: 1.2rem;
+  font-size: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+button:hover {
+  background-color: var(--amarillo);
+}
+
+/* MoreInforCards*/
+.short-description {
+  font-size: 1.3rem;
+  font-style: italic;
+  text-align: center;
+  padding: 1rem 0 1.5rem 0;
+}
+.infor-title {
+  display: grid;
+  grid-template-columns: 95% 5%;
+  justify-items: center;
+  align-items: center;
+}
+.close{
+  font-size: 1.5rem;
+  padding: 0;
+  margin: 0;
+  border-radius: 0.2rem;
+  font-weight: 600;
+}
+.article-infor {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+.section-price {
+  text-align: center;
+}
+.p-infor {
+  margin: 1rem;
+  font-size: 1.8rem;
+}
+.p2-infor {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+  font-size: 1.8rem;
+}
+.infor-price {
+  font-size: 3rem;
+  font-weight: 600;
+  background-color: var(--naranja);
+  margin: 0 4rem 0 4rem;
+  border-radius: 1.5rem;
+}
+.section-infor {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+}
+.p-boton {
+  background-color: var(--azul-oscuro);
+  border-radius: 1rem;
+  color: var(--blanco);
+  text-align: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-style: italic;
+  margin: 1.5rem 6rem 1rem 6rem;
+  padding: 0.5rem 0 0.7rem 0;
+}
+.bi-chat-text {
+  font-size: 2rem;
+}
+/*API Key style*/
+.apiKey-symbol {
+  font-size: 5rem;
+  color: var(--azul-oscuro);
+}
+.header-API {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.close-apikey {
+  margin: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.delete {
+  visibility: hidden;
+}
+.section-1 {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  justify-items: center;
+  margin: 3rem 1rem;
+}
+input[type="text"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  display: inline-block;
+  border-radius: 1rem;
+  border: none;
+  box-sizing: border-box;
+  background-color: var(--azul-oscuro);
+}
+input::placeholder {
+  color: var(--blanco);
+  font-weight: 200;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+}
+.button-key {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  margin: 1rem;
+  border: 1px solid var(--gris-oscuro);
+  background-color: var(--naranja);
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.section-2 {
+  /*If API Key doesn't work or is empty this block will pop up*/
+  display: flex;
+  justify-content: center;
+}
+.incorrect-api {
+  color: var(--rojo);
+  font-size: 2rem;
+}
+.section-3 {
+  display: grid;
+  justify-items: center;
+  margin: 3rem 0;
+  font-size: 1.3rem;
+}
+
+/* IndividualChat style*/
+.title-chat {
+  display: grid;
+  grid-template-columns: 8% 80% 12%;
+  align-items: center;
+}
+.chat-header{
+  font-size: 1.5rem;
+}
+.imag-chat {
+  border-radius: 50%;
+  height: 3.5rem;
+  width: 3.5rem;
+  margin: 0.5rem;
+}
+.header-chat {
+  text-align: left;
+}
+.bi-circle-fill {
+  color: var(--verde);
+  font-size: 0.7rem;
+  margin-right: 0.2rem;
+}
+.individual-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+}
+.apiKey-symbol-chat{
+  border: none;
+  padding: 0 0.5rem;
+  margin: 0;
+  font-size: 3rem;
+  color: var(--azul);
+  background: none;
+}
+.apiKey-symbol-chat:hover {
+  background-color: initial;
+}
+
+.chat-background {
+  background-color: var(--gris-claro);
+  margin: auto;
+  border-radius: 0 0 1rem 1rem;
+  padding: 0rem;
+  height: 30rem;
+  box-shadow: 0 0 1.25rem 0.5rem #c3c3c333;
+  display: grid;
+  align-content: end;
+}
+.chat {
+  padding: 0;
+  margin: 1.5rem;
+}
+.textBubble {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--blanco);
+  margin: 1rem;
+  width: 50rem;
+  border: var(--negro) 0.1rem ; 
+}
+.body-chat{
+  overflow: auto;
+}
+.user {
+  display: block;
+  float:right;
+  background-color: var(--verde-oscuro);
+  border-radius: 0.7rem 0.7rem 0 0.7rem;
+  padding: 0.5rem;
+}
+.chatAPI {
+  display: block;
+  float: left;
+  background-color: var(--verde-claro);
+  border-radius: 0.7rem 0.7rem 0.7rem 0;
+  padding: 0.5rem;
+}
+.message-bar {
+  display: flex;
+  margin: 1rem;
+  padding-bottom: 1rem 1rem 0 1rem;  
+  justify-content: center;
+  align-items: center;
+}
+textarea {
+  display: block;
+  resize: none;
+  width: 100%;
+  height: 3.5rem;
+  box-sizing: border-box;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  outline: none;
+  box-shadow:var(--negro);
+  padding: 0.5rem;
+}
+
+button[class="send-message"] {
+  background: transparent;
+  border: none;
+  font-size: 3rem;
+  color: var(--negro);
+  transform: rotate(45deg);
+  padding-right: 1rem;
+}
+button[class="send-message"]:hover {
+  color: var(--azul);
+}
+/* Group chat styles*/
+.group {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+} 
+.open-contacts{
+  display: none;
+}
+.contacts-style{
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+.close-contacts{
+  display: none;
+}
+.list{
+  width: 300px;
+  height: 500px;
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #ccc; /* Añade un borde para mayor claridad */
+  border-radius: 0 0 0 1rem;
+}
+.list::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.list::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+.list::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 1rem;
+}
+.imag-chat-group {
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  margin: 0.5rem;
+}
+.chat-group-text{
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.infor-title-group {
+  height: 59px;
+  display: grid;
+  grid-template-columns: 80% 20%;
+  align-items: center;
+  /*justify-items: left;
+  align-items: center;*/
+}
+.container-buttons-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* justify-items: center;
+  justify-content: end;*/
+  align-items: center; 
+  margin-right: 2rem;
+}
+.close-groupchat{
+  padding: 0;
+  font-size: 1.5rem;
+  height: 2rem;
+  width: 2rem;
+}
+.group-chat-title {
+  padding-left: 1.5rem;
+  text-align: left;
+}
+.group-background{
+  height: 500px;
+  border-radius: 0 0 1rem 0;
+}
+.title-contacts{
+  display: flex;
+  align-items: center;
+  height: 59px;
+  padding-left: 2rem;
+}
+/* Error view */
+.title-error {
+  font-size: 5rem;
+  color: var(--azul);
+  text-align: center;
+  padding: 0;
+}
+.error-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+.dont-drown {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+.text-error {
+  font-size: 2.5rem;
+}
+.img-error {
+  width: 21rem;
+  height: 21rem;
+}
+.button-get-your-cruise {
+  padding: 0.6rem 2.5rem;
+  border: 1px solid var(--gris-oscuro);
+  background-color: var(--naranja);
+  margin: 1rem 10rem;
+  border-radius: 1.2rem;
+  font-size: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Codigo dataverse proyecto 2*/
+/* cards styles*/
+.container-section {
+  background-color: var(--azul);
+  border-radius: 1rem;
+  margin: 3.75rem;
+  padding-top: 1rem;
+  text-align: center;
+  list-style-type: none;
+}
+header {
+  text-align: center;
+}
+#menu {
+  margin: 1rem 4rem 1rem 4rem;
+  padding: 0.5rem 0 0.5rem 0;
+  background-color: var(--blanco);
+  border: 2px solid var(--blanco);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 .open-menu {
-    display: none;
+  display: none;
 }
 .close-menu {
-    display: none;
+  display: none;
 }
-label{
-    padding: 0.2rem;
-    font-size: 1rem;
-    font-weight: 700;
-    margin-right: 0.3rem;
+label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-right: 0.5rem;
 }
-select{
-    appearance: none;
-    cursor: pointer;
-    outline: 0; 
-    background-color: var(--gris-claro);
-    padding: 0.2rem;
-    margin-left: 0.3rem;
-    margin-right: 2rem;
-    border: 1px solid var(--gris-oscuro);
-    border-radius: 0.3rem;
-    font-family: var(--fuente);
-    font-size: 1rem;
-    width: 10rem;
+select {
+  appearance: none;
+  cursor: pointer;
+  outline: 0;
+  background-color: var(--gris-claro);
+  padding: 0.2rem;
+  margin-right: 2rem; 
+  border: 1px solid var(--gris-oscuro);
+  border-radius: 0.3rem;
+  font-family: var(--fuente);
+  font-size: 1.2rem;
+  width: 10rem;
+  height: 3rem;
+  
 }
-select:hover{
-     background-color: var(--amarillo);
+select:hover {
+  background-color: var(--amarillo);
 }
-button[data-testid="button-clear"], button[data-testid="statistics"] {
-    background-color: var(--gris-claro);
-    border: 1px solid var(--gris-oscuro);
-    border-radius: 0.3rem;
-    padding: 0.2rem;
-    margin-left: 2rem;
-    font-family: var(--fuente);
-    font-size: 1rem;
-    font-weight: 600;
-    width: 10rem;
-    cursor: pointer;
-}
-#text {
-    margin-top: 1rem;
-    margin-left: 20rem;
-    margin-right: 20rem;
-    border-radius: 0.5rem;
-    font-size: larger;
-    background-color: var(--naranja);
-}
-#text:hover {
-    background-color: var(--amarillo);
+.buttonsContainer {
+  display: flex;
+  align-items: center;
 }
 button[data-testid="statistics"] {
-    margin: 1rem;
+  background-color: var(--gris-claro);
+  border: 1px solid var(--gris-oscuro);
+  border-radius: 0.3rem;
+  margin-right: 2rem; 
+  font-family: var(--fuente);
+  font-size: 2rem;
+  color: var(--negro);
+  font-weight: 600;
+  width: 4rem;
+  height: 3rem;
+  cursor: pointer;
 }
-button[data-testid="button-clear"]:hover, button[data-testid="statistics"]:hover {
-    background-color: var(--amarillo);
+button[data-testid="grupal-chat"] {
+  background-color: var(--gris-claro);
+  border: 1px solid var(--gris-oscuro);
+  border-radius: 0.3rem;
+  color: var(--negro);
+  margin: 0;
+  padding: 0;
+  width: 5rem;
+  height: 3rem;
+  margin-right: 2rem; 
 }
-ul{
-    margin:0;
-    padding:0;
-    list-style-type:none;
+.bi-people-fill{
+  font-size: 1.5rem;
+}
+button[data-testid="button-clear"] {
+  background-color: var(--gris-claro);
+  border: 1px solid var(--gris-oscuro);
+  border-radius: 0.3rem;
+  margin-right: 2rem; 
+  font-family: var(--fuente);
+  font-size: 1.2rem;
+  font-weight: 600;
+  width: 8rem;
+  height: 3rem;
+  cursor: pointer;
+}
+.text {
+  margin-top: 1rem;
+  margin-left: 20rem;
+  margin-right: 20rem;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+  background-color: var(--naranja);
+  text-align: center;
+}
+button[data-testid="button-clear"]:hover,
+button[data-testid="statistics"]:hover,
+button[data-testid="grupal-chat"]:hover {
+  background-color: var(--amarillo);
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.cards {
+  flex: 0 0 calc(33.33% - 0);
+  border: 1px solid #ccc;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: var(--blanco);
+  border-radius: 1rem;
+  text-align: center;
+}
+img {
+  width: 320px;
+  height: 320px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+dl {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-style: italic;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+dd {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+dd[itemprop="totalPrice"] {
+  font-size: 2.2rem;
+  font-weight: 700;
+  font-style: italic;
+  margin-top: 0.2rem;
+}
+dd[itemprop="description"]{
+  margin: 0;
+  font-style: italic;
+} 
+dd[itemprop="departureBoatTerminal"] {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-top: 0;
+}
+.see-more{
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 700;
+  padding: 0.3rem 1.2rem 0.3rem 1.2rem;
+  margin-top: 0.2rem;
+  background-color: var(--naranja);
+  border: 1px solid var(--gris-oscuro);
+  border-radius: 1rem;
+}
+footer {
+  text-align: center;
+  color: var(--blanco);
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 500;
+  margin: 0.3rem;
+  padding-bottom: 0.2rem;
+}
+
+/*CSS Responsive*/
+@media screen and (max-width: 1000px) {
+  /* IndividualChat style*/
+  .title-chat {
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+    align-items: center;
+  }
+  .chat-header{
+    font-size: 1.5rem;
+  }
+  .container-buttons {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.cards{
-    flex: 0 0 calc(33.33% - 0);
-    border: 1px solid #ccc;
-    margin: 1rem;
-    padding: 1rem;
-    background-color: var(--blanco);
-    border-radius: 1rem ;
-    
-}
-img{
-    width: 320px;
-    height: 320px;
-    border-radius: 0.5rem;
-    cursor: pointer;
-}
-dl{
-    font-size: 1.5rem;
-    font-weight: 700;
-    font-style: italic;
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-}
-dd{
-    margin:0;
-    padding:0;
-    list-style-type: none;
-}
-dd[itemprop="totalPrice"]{
-    font-size: 1.4rem;
-    font-weight: 700;
-    background-color: var(--naranja);
-    border-radius: 0.5rem;
-    padding: 0.2rem;
-    margin: 0.3rem 4.4rem;
-}
-dd[itemprop="totalPrice"]:hover{
-    background-color: var(--amarillo);
-}
-dd[itemprop="departureBoatTerminal"]{
+    justify-content: end;
+    margin-right: 1rem;
+  }
+  .apiKey-symbol-chat{
+    font-size: 2.5rem;
+  }
+  .close-chat{
     font-size: 1.2rem;
-    font-style: italic;
-    margin-top: 0;
-}
-footer{
-    text-align: center;
-    color: var(--blanco);
-    font-size: 1.6rem;
-    font-style: italic;
-    margin: 0.3rem;
-    padding-bottom: 0.2rem;
+  }
+  .online {
+    font-size: 0.8rem;
+  }
+  textarea[placeholder="Write a new message"] {
+    font-size: 1.2rem;
+  }
+  button[class="send-message"] {
+    font-size: 1.5rem;
+  }
+  /*GROUP CHAT*/
+  .container-contacts {
+    border-radius: 1rem 0 0 1rem;
+    visibility: hidden;
+    background-color: #C2DDEB;
+  }
+  .group-background {
+  border-radius: 0 0 1rem 1rem;
+  }
+  .open-contacts{
+    display: block;
+  }
+  .title-contacts {
+    display: flex;
+    justify-content: space-around;
+  }
+  .container-contacts.visible{
+    visibility: visible;
+  }
+  .contacts-style, .title-contacts {
+    border-bottom: 1px solid #333;
+  }
+  .close-contacts{
+    display: block;
+    font-size: 1.5rem;
+    width: 2rem;
+  }
+  .container-contacts{
+    position: absolute;
+  }
+  .infor-title-group{
+    display: grid;
+    grid-template-columns: 80% 20%;
+  }
+  .group-chat-title{
+    display: flex;
+  }
+  .close-groupchat{
+    padding: 0;
+    font-size: 1.5rem;
+    height: 2rem;
+    width: 2rem;
+  }
+  /* Error view */
+  .title-error {
+    font-size: 3rem;
+  }
+  .img-error {
+    width: 15rem;
+    height: 15rem;
+  }
+  .text-error {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+  .button-get-your-cruise {
+    margin: 1rem 3rem;
+    font-size: 1.2rem;
+  }
 }
 
 @media screen and (max-width: 600px) {
-    .container-section {
-        margin: 2rem;
-        padding-right: 0;
-    }
-    #menu-container {
-        margin: 0;
-    }
-    header {
-        display: flex;
-        justify-content: space-around;
-    }
+  /*Home*/
+  .background-blue {
+    margin: 1rem;
+  }
+  .background-white {
+    margin: 1rem 0 1rem 0;
+  }
+  .img-home, .image-more-infor {
+    width: 15rem;
+    height: 15rem;
+  }
+  .title-home {
+    font-size: 2.5rem;
+  }
+  footer {
+    font-size: 1.5rem;
+  }
+  /*MORE INFO CARDS*/
+  h2 {
+    font-size: 1.5rem;
+  }
+  .article-infor, .section-price, .section-infor{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .p-infor, .p2-infor, .p-boton {
+    margin: 0.3rem;
+    font-size: 1.3rem;
+  }
+  .bi-chat-text{
+    font-size: 1.3rem;
+  }
+  .short-description{
+    font-size: 1.3rem;
+  }
+  .close{
+    font-size: 0.8rem;
+    padding: 0.2rem;
+    margin-left: 0.1rem;
+  }
+  .infor-price{
+    margin: 0 3rem 0 3rem;
+  }
+  /*API KEY*/
+  .section-1{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  input[type="text"] {
+    border-radius: 0.5rem;
+  }
+  input::placeholder {
+    font-size: 1rem;
+  }
+  .button-key {
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    margin: 0 5rem 0 5rem;
+    padding: 0.5rem;
+  }
+  .apiKey-symbol{
+    font-size: 3rem;
+  }
+  .section-3 {
+    margin: 2.5rem 0;
+    font-size: 1rem;
+  }
+  .incorrect-api{
+    font-size: 1rem;
+  }
 
-    h1 {
-        font-size: 3rem;
-    }
-    h2 {
-        display: none;
-    }
-    .open-menu {
-        display: block;
-        border: 0;
-        background-color: transparent;
-        cursor: pointer;
-        color: var(--blanco);
-        font-size: 3rem;
-    }
-    select {
-        margin: 0;
-        padding: 5px;
-    }
-    select:hover {
-        background-color: var(--amarillo);
-    }
-    #menu {
-        position: fixed;
-        top: 5.45rem;
-        right: 2rem;
-        margin: 0;
-        background-color: var(--naranja);
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: end;
-        padding: 2rem;
-    }
-    .close-menu {
-        display: flex;
-        justify-content: flex-end;
-        font-size: 1.2rem;
-        margin-bottom: 0.5rem;
-    }
-    button[data-testid="button-clear"] {
-        margin-right: 0;
-        margin-top: 1rem;
-        background-color: var(--blanco);
-        cursor: pointer;
-    }
-    button[data-testid="button-clear"]:hover {
-        background-color: var(--amarillo);
-    }
+  /*Cards Proyecto 2*/
+  
+  .container-section {
+    margin: 2rem;
+    padding-right: 0;
+  }
+  #menu-container {
+    margin: 0;
+  }
+  .headerCards {
+    display: flex;
+    justify-content: space-around;
+  }
 
-    .hamburguer {
-        visibility: hidden;
-    }
-    .hamburguer.visible {
-        visibility: visible;
-    }
-    #text {
-        margin: 0.5rem;
-        border-radius: 0.5rem;
-        font-size: 1rem;
-        background-color: var(--naranja);
-    }
-    #text:hover {
-        background-color: var(--amarillo);
-    }
+  h1 {
+    font-size: 3rem;
+  }
+
+  .open-menu {
+    display: block;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--blanco);
+    font-size: 3rem;
+  }
+  label {
+    font-size: 2rem;
+  }
+  select {
+    margin-bottom: 1rem;
+    padding: 5px;
+    width: 15rem;
+    font-size: 2rem;
+  }
+  select:hover {
+    background-color: var(--amarillo);
+  }
+  .buttonsContainer {
+    display: flex;
+    flex-direction: row;
+  }
+  #menu {
+    position: fixed;
+    top: 5.45rem;
+    right: 2rem;
+    margin: 0;
+    background-color: var(--naranja);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    width: 20rem;
+  }
+  .close-menu {
+    display: flex;
+    font-size: 1.7rem;
+    margin-bottom: 0.5rem;
+    align-self:flex-end;
+  }
+  button[data-testid="button-clear"] {
+    margin-top: 1rem;
+    background-color: var(--blanco);
+    cursor: pointer;
+    align-self: center;
+  }
+  button[data-testid="button-clear"]:hover {
+    background-color: var(--amarillo);
+  }
+
+  .hamburguer {
+    visibility: hidden;
+  }
+  .hamburguer.visible {
+    visibility: visible;
+  }
+  .text {
+    margin: 1rem;
+    border-radius: 0.5rem;
+    font-size: 2rem;
+    background-color: var(--naranja);
+    text-align: center;
+  }
+  /* IndividualChat style*/
+  .title-chat {
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+    align-items: center;
+  }
+  .imag-chat {
+    height: 2.9rem;
+    width: 2.9rem;
+  }
+  .chat-header{
+    font-size: 1.2rem;
+  }
+  .bi-circle-fill {
+    font-size: 0.5rem;
+    margin-right: 0.2rem;
+  }
+  .apiKey-symbol-chat{
+    font-size: 2rem;
+  }
+  .online {
+    font-size: 0.8rem;
+  }
+  textarea[placeholder="Write a new message"] {
+    font-size: 1.2rem;
+  }
+  button[class="send-message"] {
+    font-size: 2rem;
+  }
+  /* GROUP CHAT*/
+  .infor-title-group{
+    display: grid;
+    grid-template-columns: 75% 25%;
+  }
+  .list{
+    width: 250px;
+    height: 500px;
+  }
+  .imag-chat-group {
+    border-radius: 50%;
+    height: 2.5rem;
+    width: 2.5rem;
+    margin: 0.5rem;
+  }
+  .name-cruise {
+    font-size: 1rem;
+  }
+  .close-groupchat{
+    padding: 0;
+    font-size: 1.3rem;
+    height: 1.8rem;
+    width: 1.8rem;
+  }
+
+  /* Error view */
+  .error-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  .title-error {
+    font-size: 3rem;
+  }
+  .text-error {
+    font-size: 1.2rem;
+  }
+  .button-get-your-cruise {
+    font-size: 1rem;
+  }
 }
+
+@media screen and (max-width:400px){
+  /*Home*/
+  .img-home, .image-more-infor {
+    width: 12rem;
+    height: 12rem;
+  }
+  .title-home {
+    font-size: 2rem;
+  }
+  footer {
+    font-size: 1rem;
+  }
+  /* Cards */
+  #menu {
+    width: 15rem;
+  }
+  label {
+    font-size: 1rem;
+  }
+  select {
+    width: 10rem;
+    font-size: 1rem;
+  }
+  select:hover {
+    background-color: var(--amarillo);
+  }
+  .close-menu {
+    font-size: 1.2rem;
+    margin-right: 1rem;
+  }
+  button[data-testid="statistics"] {
+    font-size: 1.5rem;
+    width: 3rem;
+  }
+  button[data-testid="grupal-chat"] {
+    width: 5rem;
+    height: 3rem;
+  }
+  .bi-people-fill{
+    font-size: 1.5rem;
+  }
+  button[data-testid="button-clear"] {
+    font-size: 1.2rem;
+  }
+  img {
+    width: 200px;
+    height: 200px;
+    border-radius: 0.5rem;
+  }
+  dl {
+    font-size: 1rem;
+  }
+  dd[itemprop="totalPrice"] {
+    font-size: 1.5rem;
+  }
+  dd[itemprop="description"]{
+    font-size: 0.8rem;
+  } 
+  dd[itemprop="departureBoatTerminal"] {
+    font-size: 1rem;
+  }
+  .see-more{
+    font-size: 1.2rem;
+    border-radius: 0.8rem;
+  }
+  /*MORE INFO CARDS*/
+  h1 {
+    color: var(--blanco);
+    font-size: 2rem;
+  }
+   h2 {
+    font-size: 1rem;
+  }
+  .short-description, .p-infor, .p2-infor, .p-boton{
+    margin: 0.2rem;
+    font-size: 0.9rem;
+  }
+  .infor-price{
+    margin: 0 2.5rem 0 2.5rem;
+  }
+  .bi-chat-text{
+    font-size: 0.9rem;
+  }
+
+  /* Individual chat */
+  .title-chat {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    align-items: center;
+  }
+  .imag-chat {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+  .chat-header{
+    font-size: 0.8rem;
+  }
+  .apiKey-symbol-chat{
+    font-size: 1.5rem;
+  }
+  .online {
+    font-size: 0.7rem;
+  }
+  textarea[placeholder="Write a new message"] {
+    font-size: 1rem;
+  }
+  button[class="send-message"] {
+    font-size: 1.7rem;
+  }
+  /* GROUP CHAT*/
+  .infor-title-group {
+    height: 59px;
+    display: grid;
+    grid-template-columns: 65% 45%;
+    align-items: center;
+  }
+  .open-contacts {
+    margin-right: 0.5rem;
+  }
+  .symbol-contacts{
+    font-size: 1rem;
+  }
+  .list{
+    width: 250px;
+    height: 500px;
+  }
+  .imag-chat-group {
+    height: 2.2rem;
+    width: 2.2rem;
+  }
+  .name-cruise {
+    font-size: 0.9rem;
+  }
+  .online-group {
+    font-size: 0.7rem;
+  }
+  .close-groupchat, .close-contacts {
+    padding: 0;
+    font-size: 1rem;
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  /* Error view */
+  .background-white {
+    display: flex;
+    flex-direction: column;
+  }
+  .title-error {
+    font-size: 2rem;
+  }
+  .error-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  .dont-drown {
+    margin-right: 1rem;
+  }
+  .img-error {
+    width: 10rem;
+    height: 10rem;
+  }
+  .text-error {
+    margin: 0;
+    font-size: 1rem;
+  }
+  .button-get-your-cruise {
+    margin: 1.5rem 2.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+

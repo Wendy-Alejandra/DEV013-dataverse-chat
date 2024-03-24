@@ -1,62 +1,133 @@
+import { data } from "./../data/dataset.js";
+import { Header } from "./../components/Header.js";
+import { Menu } from "./../components/Menu.js";
+import { Statistics } from "../components/Statistics.js";
+import { CardsRender } from "./../components/CardsRender.js";
 import { Footer } from "./../components/Footer.js";
+import {
+  filterData,
+  sortData,
+  sortDataByPrice,
+  computeStats,
+} from "./../lib/dataFunctions.js";
 
 export const Cards = () => {
-  const cards = document.createElement("h1");
-  cards.textContent = "Cards prueba";
+  document.title = "Cards";
+  const section = document.createElement("section");
+  const blueContainer = document.createElement("div");
+  blueContainer.className = "background-blue";
+  const div = document.createElement("div");
+  div.appendChild(CardsRender(data));
+  const headerCards = document.createElement("div");
+  headerCards.setAttribute("class", "headerCards");
+  const buttonCardsHamburguer = document.createElement("div");
+  buttonCardsHamburguer.innerHTML= `
+  <button class="open-menu"><i class="bi bi-list"></i></button>
+  `;
+  headerCards.append(Header(), buttonCardsHamburguer);
 
-    // const section = document.createElement("section");
-    // section.className = "container-section"
-    // const div = document.createElement("div");
-    // div.className = "menu-container";
-    // div.innerHTML =  `        
-    //       <header>
-    //         <h1>Cruise Line</h1>
-    //         <h2>"Your Dreamed Vacation"</h2>
-    //         <button class="open-menu"><i class="bi bi-list"></i></button>
-    //       </header>
-    //       <nav id="menu" class="hamburguer">
-    //         <button class="close-menu">
-    //           <i class="bi bi-x-lg"></i>
-    //         </button>
-    //         <label for="1-select">Filter by:</label>
-    //         <select data-testid="select-filter" name="price" id="1-select">
-    //           <option hidden id="Ship-price">Price</option>
-    //           <option value="1000-1500">Price $1000-$1500</option>
-    //           <option value="1501-2000">Price $1500-$2000</option>
-    //           <option value="2001-2500">Price $2000-$2500</option>
-    //           <option value="2501-3000">Price $2500-$3000</option>
-    //         </select>
-    //         <label for="2-select">Order by:</label>
-    //         <select data-testid="select-sort" name="name" id="2-select">
-    //           <option disable selected value="1">Ship Name</option>
-    //           <option value="asc">Name: A-Z</option>
-    //           <option value="desc">Name: Z-A</option>
-    //         </select>
-    //         <label for="3-select">Sort by:</label>
-    //         <select
-    //           data-testid="select-sort-price"
-    //           name="price-high-low"
-    //           id="3-select"
-    //         >
-    //           <option disable selected value="2">Price</option>
-    //           <option value="low">Low to High</option>
-    //           <option value="high">High to Low</option>
-    //         </select>
-    //         <button data-testid="button-clear">Clear</button>
-    //       </nav>`;
+  blueContainer.append(headerCards, Menu(), Statistics(), div);
+  section.append(blueContainer, Footer());
 
-    // const main = document.createElement("main");
-    // main.innerHTML = `         
-    //     <main>
-    //       <div id="statistics">
-    //         <p id="text"></p>
-    //       </div>
-    //       <button data-testid="statistics">Statistics</button>
-    //       <div id="root"></div>
-    //     </main>`;
-    
-    // const cards = `${section.append(div, main)} ${ Footer()}`;
-    return cards;
+  const selectFilter = section.querySelector(
+    'select[data-testid="select-filter"]'
+  );
+  const selectSort = section.querySelector('select[data-testid="select-sort"]');
+  const selectSortByPrice = section.querySelector(
+    'select[data-testid="select-sort-price"]'
+  );
+  const button = section.querySelector('button[data-testid="button-clear"]');
+  const buttonStats = section.querySelector('button[data-testid="statistics"]');
+  const textStats = section.querySelector(".text");
+
+  /* Filtering and sorting filtered data (filtrando y ordenando la data filtrada) */
+  selectFilter.addEventListener("change", (e) => {
+    const filteredData = filterData(data, "cruisePrice", e.target.value);
+    div.textContent = "";
+    div.append(CardsRender(filteredData));
+    selectSort.addEventListener("change", function (e) {
+      const orderFilterName = sortData(filteredData, "name", e.target.value);
+      div.innerHTML = "";
+      div.append(CardsRender(orderFilterName));
+    });
+    selectSortByPrice.addEventListener("change", function (e) {
+      const orderPriceFilter = sortDataByPrice(
+        filteredData,
+        "cruisePrice",
+        e.target.value
+      );
+      div.innerHTML = "";
+      div.append(CardsRender(orderPriceFilter));
+    });
+    textStats.textContent = "";
+  });
+
+  /* ordering by ship name only (ordenando solo por nombre de crucero)*/
+  selectSort.addEventListener("change", function (e) {
+    const orderData = sortData(data, "name", e.target.value);
+    div.innerHTML = "";
+    div.append(CardsRender(orderData));
+  });
+
+  /* ordering by cruise price only (ordenando solo por precio de crucero)*/
+  selectSortByPrice.addEventListener("change", function (e) {
+    const orderDataByPrice = sortDataByPrice(
+      data,
+      "cruisePrice",
+      e.target.value
+    );
+    div.innerHTML = "";
+    div.appendChild(CardsRender(orderDataByPrice));
+  });
+
+  /* resetting all (limpiando todo)*/
+  button.addEventListener("click", function () {
+    selectSortByPrice.selectedIndex = 0;
+    selectSort.selectedIndex = 0;
+    selectFilter.selectedIndex = 0;
+    textStats.textContent = "";
+    div.innerHTML = "";
+    div.append(CardsRender(data));
+    selectSortByPrice.addEventListener("change", function (e) {
+      const orderDataByPrice = sortDataByPrice(
+        data,
+        "cruisePrice",
+        e.target.value
+      );
+      div.innerHTML = "";
+      div.append(CardsRender(orderDataByPrice));
+    });
+    selectSort.addEventListener("change", function (e) {
+      const orderData = sortData(data, "name", e.target.value);
+      div.innerHTML = "";
+      div.append(CardsRender(orderData));
+    });
+  });
+
+  /* updating statistics (average price) all cards and filtered cards (actualizando las estadisticas (promedio
+  de precios) para todas las tarjetas)*/
+  buttonStats.addEventListener("click", function () {
+    if (selectFilter.value === "Price") {
+      textStats.textContent = computeStats(data);
+    } else {
+      const filteredData = filterData(data, "cruisePrice", selectFilter.value);
+      textStats.textContent = computeStats(filteredData);
+    }
+  });
+
+  /* opening-closing hamburguer menu for screen devices <600px (abriendo-cerrando el menu hamburguesa para
+  dispositivos con pantallas <600px)*/
+  const navMenu = blueContainer.querySelector("#menu");
+  const openHamburguerMenu = blueContainer.querySelector(".open-menu");
+  const closeHamburguer = blueContainer.querySelector(".close-menu");
+
+  openHamburguerMenu.addEventListener("click", () => {
+    navMenu.classList.add("visible");
+  });
+
+  closeHamburguer.addEventListener("click", () => {
+    navMenu.classList.remove("visible");
+  });
+
+  return section;
 };
-
-// export default Home;
