@@ -90,7 +90,6 @@ export const IndividualChat = ({ id: cardId }) => {
   userInput.addEventListener("keyup", (event)=>{
     if(event.key === "Enter" && userInput.value !==""){
       sendMessage();
-      ;
     }
   })
 

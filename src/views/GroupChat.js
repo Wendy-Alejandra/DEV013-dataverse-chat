@@ -68,15 +68,15 @@ export const GroupChat = () => {
   const keyButton = whiteContainer.querySelector(".apiKey-symbol-chat");
   keyButton.addEventListener("click", () => {
     navigateTo("/ApiKey");
-  })
+  });
 
   /* Create const to access html attributes */
   const sendMessageButton = whiteContainer.querySelector(".bi-send");
   const userInput = whiteContainer.querySelector(".text-input");
   const chatWindow = whiteContainer.querySelector(".body-chat");
 
-   //Scroll
-   function scrollToBottom(){
+  //Scroll
+  function scrollToBottom() {
     chatWindow.scrollTop = chatWindow.scrollHeight - chatWindow.clientHeight;
   }
 
@@ -93,7 +93,10 @@ export const GroupChat = () => {
     data.forEach(async (element) => {
       const chatAPI = document.createElement("div");
       chatAPI.className = "textBubble chatAPI";
-      const chatAPIResponse = await communicateWithOpenAI(element.description, userInputValue);
+      const chatAPIResponse = await communicateWithOpenAI(
+        element.description,
+        userInputValue
+      );
 
       chatAPI.innerHTML = `<h2>${element.name}</h2>
       <p>${chatAPIResponse}</p>
@@ -101,25 +104,18 @@ export const GroupChat = () => {
       chatWindow.append(chatAPI);
       scrollToBottom();
     });
-    
   });
 
   //Para el responsive
   const blockContacts = whiteContainer.querySelector(".container-contacts");
-  const closeContacts= whiteContainer.querySelector(".close-contacts");
+  const closeContacts = whiteContainer.querySelector(".close-contacts");
   const openContacts = whiteContainer.querySelector(".open-contacts");
-  openContacts.addEventListener("click", ()=>{
+  openContacts.addEventListener("click", () => {
     blockContacts.classList.add("visible");
-  })
-  closeContacts.addEventListener("click", ()=>{
+  });
+  closeContacts.addEventListener("click", () => {
     blockContacts.classList.remove("visible");
-  })
-
-  // userInput.addEventListener("keyup", (event) => {
-  //   if (event.key === "Enter" && userInput.value !== "") {
-  //     sendMessage();
-  //   }
-  // });
+  });
 
   return container;
 };
