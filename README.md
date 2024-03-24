@@ -6,7 +6,8 @@
 * [2. Funcionalidades](#2-funcionalidades)
 * [3. Estructura](#3-estructura)
 * [4. Tecnologías y Herramientas](#4-tecnologías-y-herramientas)
-* [5. Definición del Producto](#5-definición-del-producto)
+* [5. Despliegue del proyecto](#5-despliegue-del-proyecto)
+* [6. Definición del Producto](#6-definición-del-producto)
 
 
 
@@ -124,11 +125,11 @@ Implementamos una estructura basada en el uso de componentes. Esta metodología 
 </p>
 
 
-## ---MODIFICAR: AGREGAR EL LINK DEL PROYECTO YA DESPLEGADO---
-* La interfaz del proyecto fue desplegada en GitHub pages y en 
-  [Vercel](https://vercel.com/) o [Netlify](https://www.netlify.com/).
+## 5. Despliegue del proyecto
+* La interfaz del proyecto fue desplegada en
+  [Vercel](https://dev-013-dataverse-chat-zeta.vercel.app/) 
 
-## 5. Definición del producto
+## 6. Definición del producto
 
 Para realizar el presente proyecto, se definieron 3 historias de usuario, se diseñó la interfaz de usuaria mediante el uso de sketches o prototipos de baja fidelidad y prototipos de alta fidelidad en [Figma](https://www.figma.com/file/V5doEKg8V9PpNrpNUzrGH3/Prototipos-HU1?type=design&node-id=0-1&mode=design&t=oiz0EfUpai0hLcqp-0) para cada una de las vistas de nuestra SPA.
 
